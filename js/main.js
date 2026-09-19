@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * FINORA — HOME PAGE INTERACTIVE ENGINE
+ * FINORA — PREMIUM SAAS INTERACTIVE ENGINE
  * File: /js/main.js
  * Project: Finora - AI-Powered Financial Journeys
  * Hackathon Prototype Edition 2026
@@ -8,146 +8,147 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initMobileMenu();
+  initThemeToggle();
   initSearchInteraction();
   initHomeAIChat();
-  initJourneyTimeline();
+  initJourneyStepper();
   initHomeModals();
   initEMICalculator();
   initSmoothScroll();
 });
 
 /* --------------------------------------------------------------------------
-   1. MOBILE MENU & BACKDROP TOGGLE
+   1. DAY / NIGHT THEME TOGGLE ENGINE
    -------------------------------------------------------------------------- */
-function initMobileMenu() {
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const mobileDrawer = document.getElementById('mobileDrawer');
-  const mobileDrawerClose = document.getElementById('mobileDrawerClose');
-  const mobileBackdrop = document.getElementById('mobileDrawerBackdrop');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+function initThemeToggle() {
+  const lightBtn = document.getElementById('themeLightBtn');
+  const darkBtn = document.getElementById('themeDarkBtn');
+  
+  // Check saved or system preference
+  const savedTheme = localStorage.getItem('finora_theme') || 'light';
+  applyTheme(savedTheme);
 
-  if (!mobileMenuBtn || !mobileDrawer) return;
-
-  function openDrawer() {
-    mobileDrawer.classList.add('open');
-    if (mobileBackdrop) mobileBackdrop.classList.add('active');
-    mobileMenuBtn.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+  if (lightBtn) {
+    lightBtn.addEventListener('click', () => {
+      applyTheme('light');
+    });
   }
 
-  function closeDrawer() {
-    mobileDrawer.classList.remove('open');
-    if (mobileBackdrop) mobileBackdrop.classList.remove('active');
-    mobileMenuBtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+  if (darkBtn) {
+    darkBtn.addEventListener('click', () => {
+      applyTheme('dark');
+    });
   }
 
-  mobileMenuBtn.addEventListener('click', () => {
-    const isOpen = mobileDrawer.classList.contains('open');
-    if (isOpen) closeDrawer();
-    else openDrawer();
-  });
-
-  if (mobileDrawerClose) {
-    mobileDrawerClose.addEventListener('click', closeDrawer);
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      lightBtn?.classList.remove('active');
+      darkBtn?.classList.add('active');
+      localStorage.setItem('finora_theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      lightBtn?.classList.add('active');
+      darkBtn?.classList.remove('active');
+      localStorage.setItem('finora_theme', 'light');
+    }
   }
-
-  if (mobileBackdrop) {
-    mobileBackdrop.addEventListener('click', closeDrawer);
-  }
-
-  mobileNavLinks.forEach((link) => {
-    link.addEventListener('click', closeDrawer);
-  });
 }
 
 /* --------------------------------------------------------------------------
    2. SEARCH INTERACTION (Ctrl + K / Cmd + K)
    -------------------------------------------------------------------------- */
 function initSearchInteraction() {
-  const searchInputs = document.querySelectorAll('.search-input');
+  const searchInput = document.getElementById('globalSearchInput');
 
   document.addEventListener('keydown', (e) => {
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
-      const primarySearch = document.getElementById('globalSearchInput');
-      if (primarySearch) {
-        primarySearch.focus();
-        primarySearch.select();
+      if (searchInput) {
+        searchInput.focus();
+        searchInput.select();
       }
     }
   });
 
-  searchInputs.forEach((input) => {
-    input.addEventListener('keydown', (e) => {
+  if (searchInput) {
+    searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
-        const query = input.value.trim();
+        const query = searchInput.value.trim();
         if (query) {
-          const aiInput = document.getElementById('homeAiInput');
-          if (aiInput) {
-            aiInput.value = query;
-            handleHomeAiMessage(query);
-            aiInput.value = '';
-            scrollToAiCard();
-          }
+          handleHomeAiMessage(query);
+          searchInput.value = '';
+          scrollToAiCard();
         }
       }
     });
-  });
+  }
 }
 
 /* --------------------------------------------------------------------------
-   3. FINORA AI CONVERSATIONAL COMPANION (RIGHT SIDEBAR)
+   3. FINORA AI CONVERSATIONAL COMPANION (RIGHT PANEL)
    -------------------------------------------------------------------------- */
 const HOME_AI_RESPONSES = {
-  "what loan suits my needs": `To help you find the right loan, consider your goal:
-• **Home Loan**: For buying or constructing property (tenures up to 30 years, interest ~8.5%).
-• **Personal Loan**: For emergencies, wedding, or travel without collateral (1–5 years, ~10.5%–16%).
-• **Education Loan**: For higher studies in India or abroad with student repayment holidays.
-• **Car Loan**: For new or pre-owned vehicle purchases (3–7 years).
+  "explain a financial term": `**Key Financial Terms Demystified:**
+• **EMI (Equated Monthly Installment)**: Fixed monthly payment combining principal and interest.
+• **CIBIL / Credit Score**: A 3-digit score (300–900). 750+ unlocks the lowest interest rates.
+• **Deductible**: The amount you pay out-of-pocket before health insurance coverage kicks in.
+• **FOIR**: Fixed Obligation to Income Ratio. Lenders prefer EMIs under 40% of net monthly income.
 
-Would you like to explore the full Loans Journey?`,
+Which specific term would you like more details on?`,
 
-  "explain insurance coverage": `**Insurance Coverage** represents the financial shield provided by your policy:
-• **Health Insurance**: Covers inpatient hospitalization, room rent, ICU, and day-care treatments (e.g. ₹10 Lakhs to ₹1 Crore cover).
-• **Term Life Insurance**: Provides a guaranteed lump-sum payout (e.g. ₹1.5 Crore) to your family if unexpected events occur.
-• **Vehicle Insurance**: Comprehensive cover protects against accident damages, theft, and third-party liabilities.`,
+  "explore loans": `**Finora Loans Journey:**
+We guide you across all major lending journeys:
+1. **Home Loans**: Rates from ~8.5% with tenures up to 30 years and tax benefits under Sec 24(b).
+2. **Personal Loans**: Fast disbursement without collateral for emergencies.
+3. **Education Loans**: Dedicated repayment holiday (moratorium) during study periods.
+4. **Car Loans**: Flexible financing with up to 90% on-road funding.
 
-  "how does emi work": `**Equated Monthly Installment (EMI)** is the fixed monthly repayment amount you pay to the lender.
-• **Formula**: EMI includes both **Principal Repayment** and **Interest Fees**.
-• **Rule of Thumb**: Keep your total monthly EMIs under **40% of your net monthly income** for healthy financial stability.
-• Try our interactive **EMI Calculator** tool below!`,
+Would you like to try the **EMI Calculator** or view the full **Loans Journey**?`,
 
-  "what documents are required": `Standard financial documentation in India includes:
-• **KYC & Identity**: PAN Card (Mandatory), Aadhaar Card, Passport, or Voter ID.
-• **Address Proof**: Electricity Bill, Bank Passbook, or Rental Agreement.
-• **Income Proof**: Last 3 months Salary Slips, Form 16, 6 months Bank Statements, or 2–3 years ITR filings.`,
+  "understand insurance": `**Finora Insurance Guidance:**
+• **Health Insurance**: Hospitalization shield with cashless network access and pre/post coverage.
+• **Term Life Insurance**: Pure protection for family security (recommend 10x-15x annual income).
+• **Motor & Vehicle**: Comprehensive mandatory and own-damage coverage.
 
-  "i have a specific question": `I'm ready to help! Ask me anything about interest rates, CIBIL credit scores, health insurance waiting periods, digital KYC, or repayment planning.`
+Need help reviewing policy waiting periods or claim filing procedures?`,
+
+  "explore fintech": `**Modern Digital Fintech Services:**
+• **UPI & Instant Payments**: Safe scan & pay protocols, PIN safety, and fraud prevention.
+• **Digital KYC**: Paperless DigiLocker and Video-KYC onboarding in under 5 minutes.
+• **Wealth Tech & Mutual Funds**: Automated SIPs (Systematic Investment Plans) starting at ₹500/mo.
+• **Credit Management**: Free monthly credit monitoring and score improvement steps.`,
+
+  "help me prepare": `**Journey Preparation Roadmap:**
+1. **Verify Documents**: PAN, Aadhaar, 3 months pay slips, 6 months bank statements.
+2. **Review Credit Health**: Check for discrepancies or late payments on your CIBIL report.
+3. **Calculate EMI Budget**: Ensure total proposed EMI is below 40% of your take-home pay.
+4. **Compare Options**: Review loan processing fees and insurance waiting periods before applying.`,
+
+  "ask a question": `I'm ready to answer any question! You can ask about loan eligibility calculations, insurance exclusions, repayment schedules, or fintech safety rules.`
 };
 
 function initHomeAIChat() {
   const form = document.getElementById('homeAiForm');
   const input = document.getElementById('homeAiInput');
-  const quickChips = document.querySelectorAll('.home-ai-chip-btn');
+  const quickChips = document.querySelectorAll('.ai-chip-pill');
   const eligibilityAskBtn = document.getElementById('eligibilityAskAiBtn');
   const docChecklistAskBtn = document.getElementById('docChecklistAskAiBtn');
+  const sidebarAiTrigger = document.getElementById('sidebarAiTrigger');
+  const mobileAiBtn = document.getElementById('mobileAiBtn');
 
   // Quick Action Chips
   quickChips.forEach((chip) => {
     chip.addEventListener('click', () => {
       const intent = chip.getAttribute('data-intent');
-      if (input) {
-        input.value = intent;
+      if (intent) {
         handleHomeAiMessage(intent);
-        input.value = '';
       }
     });
   });
 
-  // Modal Ask AI Triggers
+  // Modal Triggers
   if (eligibilityAskBtn) {
     eligibilityAskBtn.addEventListener('click', () => {
       closeAllModals();
@@ -159,10 +160,21 @@ function initHomeAIChat() {
   if (docChecklistAskBtn) {
     docChecklistAskBtn.addEventListener('click', () => {
       closeAllModals();
-      handleHomeAiMessage('What documents are required for loan and insurance applications?');
+      handleHomeAiMessage('Help me prepare');
       scrollToAiCard();
     });
   }
+
+  // Sidebar / Mobile AI buttons
+  [sidebarAiTrigger, mobileAiBtn].forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        scrollToAiCard();
+        input?.focus();
+      });
+    }
+  });
 
   // Form Submit
   if (form && input) {
@@ -182,21 +194,16 @@ function handleHomeAiMessage(userText) {
 
   // 1. Append User Bubble
   const userBubble = document.createElement('div');
-  userBubble.className = 'user-bubble-msg';
-  userBubble.innerHTML = `<div class="user-bubble-content">${escapeHtml(userText)}</div>`;
+  userBubble.className = 'user-msg-bubble';
+  userBubble.textContent = userText;
   chatBody.appendChild(userBubble);
   chatBody.scrollTop = chatBody.scrollHeight;
 
-  // 2. Show Typing Indicator
+  // 2. Typing indicator
   const typingBubble = document.createElement('div');
-  typingBubble.className = 'ai-bubble-msg';
+  typingBubble.className = 'ai-msg-bubble';
   typingBubble.id = 'homeAiTyping';
-  typingBubble.innerHTML = `
-    <div class="ai-bubble-avatar">🤖</div>
-    <div class="ai-bubble-content">
-      <em>Finora AI is organizing guidance...</em>
-    </div>
-  `;
+  typingBubble.innerHTML = `<em>Finora AI is organizing guidance...</em>`;
   chatBody.appendChild(typingBubble);
   chatBody.scrollTop = chatBody.scrollHeight;
 
@@ -207,18 +214,15 @@ function handleHomeAiMessage(userText) {
 
     const responseText = getHomeAiResponse(userText);
     const aiBubble = document.createElement('div');
-    aiBubble.className = 'ai-bubble-msg';
-    aiBubble.innerHTML = `
-      <div class="ai-bubble-avatar">🤖</div>
-      <div class="ai-bubble-content">${responseText}</div>
-    `;
+    aiBubble.className = 'ai-msg-bubble';
+    aiBubble.innerHTML = formatMarkdownText(responseText);
     chatBody.appendChild(aiBubble);
     chatBody.scrollTop = chatBody.scrollHeight;
-  }, 600);
+  }, 450);
 }
 
 function getHomeAiResponse(query) {
-  const normalized = query.toLowerCase();
+  const normalized = query.toLowerCase().trim();
 
   for (const [key, answer] of Object.entries(HOME_AI_RESPONSES)) {
     if (normalized.includes(key) || key.includes(normalized)) {
@@ -226,89 +230,104 @@ function getHomeAiResponse(query) {
     }
   }
 
-  if (normalized.includes('loan')) {
-    return HOME_AI_RESPONSES["what loan suits my needs"];
+  if (normalized.includes('loan') || normalized.includes('borrow')) {
+    return HOME_AI_RESPONSES["explore loans"];
   }
 
-  if (normalized.includes('insurance') || normalized.includes('coverage') || normalized.includes('policy')) {
-    return HOME_AI_RESPONSES["explain insurance coverage"];
+  if (normalized.includes('insurance') || normalized.includes('policy') || normalized.includes('claim')) {
+    return HOME_AI_RESPONSES["understand insurance"];
   }
 
-  if (normalized.includes('emi') || normalized.includes('calculator') || normalized.includes('interest')) {
-    return HOME_AI_RESPONSES["how does emi work"];
+  if (normalized.includes('fintech') || normalized.includes('upi') || normalized.includes('payment')) {
+    return HOME_AI_RESPONSES["explore fintech"];
   }
 
-  if (normalized.includes('doc') || normalized.includes('kyc') || normalized.includes('proof')) {
-    return HOME_AI_RESPONSES["what documents are required"];
+  if (normalized.includes('prepare') || normalized.includes('doc') || normalized.includes('kyc')) {
+    return HOME_AI_RESPONSES["help me prepare"];
   }
 
-  return `Here is what you should know about **${escapeHtml(query)}**: Finora guides you through financial services by breaking down every step into simple, actionable milestones across loans, insurance, and digital fintech. Would you like to start an educational journey in Loans, Insurance, or explore our interactive tools?`;
+  if (normalized.includes('term') || normalized.includes('emi') || normalized.includes('meaning')) {
+    return HOME_AI_RESPONSES["explain a financial term"];
+  }
+
+  return `Here is what you should know about **${escapeHtml(query)}**: Finora guides you through financial services by breaking down every step into simple, actionable milestones across loans, insurance, and digital fintech. Would you like to explore our interactive tools or check our document checklist?`;
+}
+
+function formatMarkdownText(text) {
+  let formatted = escapeHtml(text);
+  // Bold
+  formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  // Bullets
+  formatted = formatted.replace(/• (.*?)(?:\n|$)/g, '<div style="margin-left: 8px; margin-bottom: 3px;">• $1</div>');
+  // Newlines
+  formatted = formatted.replace(/\n/g, '<br>');
+  return formatted;
 }
 
 function scrollToAiCard() {
-  const aiCard = document.querySelector('.home-ai-card');
-  if (aiCard) {
-    aiCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const aiSection = document.getElementById('aiSection');
+  if (aiSection) {
+    aiSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
 
 /* --------------------------------------------------------------------------
-   4. FINANCIAL JOURNEY TIMELINE (5 STEPS)
+   4. FINANCIAL JOURNEY STEPPER (5 INTERACTIVE STAGES)
    -------------------------------------------------------------------------- */
-const HOME_JOURNEY_STEPS = [
+const JOURNEY_STAGES = [
   {
     step: "01",
     title: "01 — Understand the Basics & Clarify Your Goals",
-    text: "Start with zero confusion. Finora demystifies complicated jargon across lending, insurance coverage, and digital fintech so you know exactly what options fit your situation before making any commitment.",
-    tip: "AI Guidance: Understanding your credit health and coverage requirements upfront saves time and prevents costly surprises.",
-    btnText: "Explore Solutions",
-    action: "solutions"
+    desc: "Start with zero confusion. Finora demystifies complicated jargon across lending, insurance coverage, and digital fintech so you know exactly what options fit your situation before making any commitment.",
+    tip: "Understanding your credit health and coverage requirements upfront saves time and prevents costly surprises.",
+    btnText: "Explore Product Areas",
+    action: "products"
   },
   {
     step: "02",
-    title: "02 — Plan & Compare Your Best Options",
-    text: "Review terms, tenure, interest rates, deductibles, and waiting periods side-by-side. Calculate repayment schedules using our transparent visual estimators.",
-    tip: "AI Guidance: Balancing monthly cashflow affordability with total interest outgo gives you optimal long-term security.",
+    title: "02 — Explore & Compare Options Side-by-Side",
+    desc: "Review terms, tenure, interest rates, deductibles, and waiting periods side-by-side. Calculate repayment schedules using our transparent visual estimators.",
+    tip: "Balancing monthly cashflow affordability with total interest outgo gives you optimal long-term security.",
     btnText: "Open EMI Calculator",
     action: "calculator"
   },
   {
     step: "03",
-    title: "03 — Take Action & Prepare Documentation",
-    text: "Organize mandatory paperwork including PAN, Aadhaar, address verification, salary slips, and bank statements with our step-by-step document checklist.",
-    tip: "AI Guidance: Ensuring your name and address match across all submitted records avoids verification delays.",
-    btnText: "View Document Checklist",
+    title: "03 — Prepare Documentation & Assess Financial Health",
+    desc: "Organize your KYC records, income statements, and credit score records. Finora AI verifies checklist readiness so you avoid rejection delays.",
+    tip: "Matching names across PAN and Aadhaar prevents 92% of early documentation rejections.",
+    btnText: "Open Document Checklist",
     action: "docs"
   },
   {
     step: "04",
-    title: "04 — Track & Navigate the Process with Confidence",
-    text: "Understand verification timelines, lender evaluation factors, TPA cashless pre-authorisation steps, and status milestones.",
-    tip: "AI Guidance: Lenders assess your Fixed Obligation to Income Ratio (FOIR). Maintaining it below 40% speeds up processing.",
-    btnText: "Explore Eligibility Guide",
+    title: "04 — Navigate the Application & Verification",
+    desc: "Understand verification timelines, lender evaluation factors, cashless pre-authorisation steps, and status milestones.",
+    tip: "Lenders assess your Fixed Obligation to Income Ratio (FOIR). Maintaining it below 40% speeds up processing.",
+    btnText: "Check Eligibility Guide",
     action: "eligibility"
   },
   {
     step: "05",
-    title: "05 — Achieve Your Goal & Build a Brighter Future",
-    text: "Disburse loans responsibly, manage ongoing policy renewals, claim benefits seamlessly, and achieve your financial aspirations with confidence.",
-    tip: "AI Guidance: Regular on-time payments boost your credit score above 750, unlocking premium financial benefits.",
+    title: "05 — Complete Your Goal & Build a Brighter Future",
+    desc: "Disburse loans responsibly, manage ongoing policy renewals, claim benefits seamlessly, and achieve your financial aspirations with confidence.",
+    tip: "Regular on-time payments boost your credit score above 750, unlocking premium financial benefits.",
     btnText: "Start AI Journey",
     action: "ai"
   }
 ];
 
-function initJourneyTimeline() {
-  const stepButtons = document.querySelectorAll('.home-journey-step');
-  const detailNum = document.getElementById('homeDetailStepNum');
-  const detailTitle = document.getElementById('homeDetailTitle');
-  const detailText = document.getElementById('homeDetailText');
-  const detailTip = document.getElementById('homeDetailTip');
-  const detailBtn = document.getElementById('homeDetailActionBtn');
+function initJourneyStepper() {
+  const stepButtons = document.querySelectorAll('.journey-step-btn');
+  const titleEl = document.getElementById('stepDetailTitle');
+  const descEl = document.getElementById('stepDetailDesc');
+  const tipTextEl = document.getElementById('stepDetailTipText');
+  const btnTextEl = document.getElementById('stepDetailBtnText');
+  const actionBtn = document.getElementById('stepDetailActionBtn');
 
   stepButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const stepIndex = parseInt(btn.getAttribute('data-step-index') || '0', 10);
+      const stepIdx = parseInt(btn.getAttribute('data-step-index') || '0', 10);
 
       stepButtons.forEach((b) => {
         b.classList.remove('active-step');
@@ -317,36 +336,31 @@ function initJourneyTimeline() {
       btn.classList.add('active-step');
       btn.setAttribute('aria-selected', 'true');
 
-      const data = HOME_JOURNEY_STEPS[stepIndex] || HOME_JOURNEY_STEPS[0];
-      if (detailNum) detailNum.textContent = data.step;
-      if (detailTitle) detailTitle.textContent = data.title;
-      if (detailText) detailText.textContent = data.text;
-      if (detailTip) {
-        detailTip.innerHTML = `
-          <span class="home-tip-icon">💡</span>
-          <span class="home-tip-text">${data.tip}</span>
-        `;
-      }
-      if (detailBtn) detailBtn.textContent = data.btnText;
+      const data = JOURNEY_STAGES[stepIdx] || JOURNEY_STAGES[0];
+      if (titleEl) titleEl.textContent = data.title;
+      if (descEl) descEl.textContent = data.desc;
+      if (tipTextEl) tipTextEl.textContent = `AI Tip: ${data.tip}`;
+      if (btnTextEl) btnTextEl.textContent = data.btnText;
     });
   });
 
-  if (detailBtn) {
-    detailBtn.addEventListener('click', () => {
-      const activeStep = document.querySelector('.home-journey-step.active-step');
-      const idx = activeStep ? parseInt(activeStep.getAttribute('data-step-index') || '0', 10) : 0;
-      const data = HOME_JOURNEY_STEPS[idx] || HOME_JOURNEY_STEPS[0];
+  if (actionBtn) {
+    actionBtn.addEventListener('click', () => {
+      const activeBtn = document.querySelector('.journey-step-btn.active-step');
+      const idx = activeBtn ? parseInt(activeBtn.getAttribute('data-step-index') || '0', 10) : 0;
+      const data = JOURNEY_STAGES[idx] || JOURNEY_STAGES[0];
 
-      if (data.action === 'solutions') {
-        document.getElementById('solutionsSection')?.scrollIntoView({ behavior: 'smooth' });
-      } else if (data.action === 'calculator') {
+      if (data.action === 'calculator') {
         openModal('modalEmiCalculator');
       } else if (data.action === 'docs') {
         openModal('modalDocChecklist');
       } else if (data.action === 'eligibility') {
         openModal('modalEligibilityGuide');
+      } else if (data.action === 'products') {
+        window.location.href = 'loans.html';
       } else {
-        window.location.href = 'ai-assistant.html';
+        scrollToAiCard();
+        document.getElementById('homeAiInput')?.focus();
       }
     });
   }
@@ -356,29 +370,29 @@ function initJourneyTimeline() {
    5. INTERACTIVE MODALS
    -------------------------------------------------------------------------- */
 function initHomeModals() {
-  const toolEmi = document.getElementById('homeToolEmi');
-  const toolEligibility = document.getElementById('homeToolEligibility');
-  const toolDocs = document.getElementById('homeToolDocs');
-  const toolKnowledge = document.getElementById('homeToolKnowledge');
+  const toolEmi = document.getElementById('toolEmiBtn');
+  const toolEligibility = document.getElementById('toolEligibilityBtn');
+  const toolDocs = document.getElementById('toolDocsBtn');
+  const toolKnowledge = document.getElementById('toolKnowledgeBtn');
+  const newJourneyBtn = document.getElementById('newJourneyBtn');
+
   const closeEmi = document.getElementById('closeEmiModal');
   const closeEligibility = document.getElementById('closeEligibilityModal');
   const closeDocs = document.getElementById('closeDocChecklistModal');
 
-  if (toolEmi) {
-    toolEmi.addEventListener('click', () => openModal('modalEmiCalculator'));
-  }
-
-  if (toolEligibility) {
-    toolEligibility.addEventListener('click', () => openModal('modalEligibilityGuide'));
-  }
-
-  if (toolDocs) {
-    toolDocs.addEventListener('click', () => openModal('modalDocChecklist'));
-  }
-
+  if (toolEmi) toolEmi.addEventListener('click', () => openModal('modalEmiCalculator'));
+  if (toolEligibility) toolEligibility.addEventListener('click', () => openModal('modalEligibilityGuide'));
+  if (toolDocs) toolDocs.addEventListener('click', () => openModal('modalDocChecklist'));
   if (toolKnowledge) {
     toolKnowledge.addEventListener('click', () => {
-      window.location.href = 'knowledge-hub.html';
+      handleHomeAiMessage('Explain a financial term');
+      scrollToAiCard();
+    });
+  }
+  if (newJourneyBtn) {
+    newJourneyBtn.addEventListener('click', () => {
+      handleHomeAiMessage('What financial journey should I start with?');
+      scrollToAiCard();
     });
   }
 

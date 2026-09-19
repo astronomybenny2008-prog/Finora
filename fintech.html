@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finora Fintech — Explore digital financial services, payments, and modern fintech tools with transparent AI guidance.">
+  <meta name="theme-color" content="#F7F7F5">
+  <title>Fintech Services — Finora | AI-Powered Financial Journeys</title>
+  
+  <!-- Core & Responsive Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- MASTER DASHBOARD VIEWPORT -->
+    <div class="dashboard-viewport">
+
+      <!-- LEFT FLOATING SIDEBAR DOCK -->
+      <aside class="sidebar-dock" aria-label="Finora Main Navigation">
+        <!-- Logo Pill -->
+        <a href="index.html" class="sidebar-logo-pill" aria-label="Finora Home">
+          <svg class="sidebar-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="currentColor"/>
+          </svg>
+        </a>
+
+        <!-- Primary Navigation Icons Container -->
+        <nav class="sidebar-nav-container" aria-label="Platform Views">
+          <a href="index.html" class="sidebar-btn" data-tooltip="Dashboard Overview" aria-label="Home Overview">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+              <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+              <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+              <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+            </svg>
+          </a>
+
+          <a href="loans.html" class="sidebar-btn" data-tooltip="Loans Journey" aria-label="Loans">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="21" x2="21" y2="21"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <polyline points="5 6 12 3 19 6"></polyline>
+              <line x1="6" y1="10" x2="6" y2="21"></line>
+              <line x1="10" y1="10" x2="10" y2="21"></line>
+              <line x1="14" y1="10" x2="14" y2="21"></line>
+              <line x1="18" y1="10" x2="18" y2="21"></line>
+            </svg>
+          </a>
+
+          <a href="insurance.html" class="sidebar-btn" data-tooltip="Insurance Journey" aria-label="Insurance">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </a>
+
+          <a href="fintech.html" class="sidebar-btn active" data-tooltip="Fintech Services" aria-current="page" aria-label="Fintech">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <line x1="2" y1="10" x2="22" y2="10"></line>
+            </svg>
+          </a>
+
+          <a href="#aiSection" class="sidebar-btn" data-tooltip="Finora AI" id="sidebarAiTrigger" aria-label="AI Assistant">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+            </svg>
+          </a>
+        </nav>
+
+        <!-- Sidebar Footer Controls -->
+        <div class="sidebar-footer-nav" aria-label="Utility Controls">
+          <button type="button" class="sidebar-btn" data-tooltip="Settings" aria-label="Settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </button>
+          <button type="button" class="sidebar-btn" data-tooltip="Help & Documentation" aria-label="Help">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN FLOW -->
+      <div class="dashboard-main-flow">
+
+        <!-- TOP PILL HEADER -->
+        <header class="top-pill-header" role="banner">
+          <div class="header-left-search">
+            <div class="search-pill-container">
+              <svg class="search-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="search" id="globalSearchInput" class="search-pill-input" placeholder="Search digital payments, UPI, KYC or security tools..." aria-label="Search topics">
+              <span class="search-shortcut-badge">⌘K</span>
+            </div>
+          </div>
+
+          <div class="header-right-actions">
+            <!-- Day / Night Pill Toggle -->
+            <div class="theme-pill-toggle" role="radiogroup" aria-label="Theme Selection">
+              <button type="button" class="theme-mode-btn active" id="themeLightBtn" aria-label="Light Mode">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              </button>
+              <button type="button" class="theme-mode-btn" id="themeDarkBtn" aria-label="Dark Mode">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Notification -->
+            <button type="button" class="header-icon-pill" aria-label="Notifications">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+            </button>
+
+            <!-- User Profile Pill -->
+            <div class="user-profile-pill" tabindex="0" role="button" aria-label="User Brightlin">
+              <div class="user-avatar-circle">BB</div>
+              <span class="user-pill-name">Brightlin</span>
+            </div>
+
+            <!-- Primary Black CTA -->
+            <a href="index.html" class="header-action-btn-black">
+              <span>Back to Dashboard</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </header>
+
+        <!-- 2-COLUMN CONTAINER -->
+        <div class="dashboard-grid-container">
+          
+          <main class="dashboard-center-column">
+            
+            <div class="dashboard-heading-row">
+              <div class="dashboard-heading-group">
+                <div class="dashboard-greeting-eyebrow">
+                  <span>💳</span>
+                  <span>Digital Financial Services</span>
+                </div>
+                <h1 class="dashboard-page-title">Fintech Services & Security</h1>
+              </div>
+            </div>
+
+            <!-- 4-Card Overview Row -->
+            <section class="metrics-row-grid">
+              <article class="metric-card">
+                <div class="metric-card-top">
+                  <span class="metric-label">Digital KYC</span>
+                  <span class="metric-arrow-badge">↗</span>
+                </div>
+                <div class="metric-value-group">
+                  <span class="metric-main-value">Verified</span>
+                  <div class="metric-sub-delta">
+                    <span class="metric-delta-tag tag-green">100%</span>
+                    <span>DigiLocker Linked</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="metric-card">
+                <div class="metric-card-top">
+                  <span class="metric-label">UPI Safety Score</span>
+                  <span class="metric-arrow-badge">↗</span>
+                </div>
+                <div class="metric-value-group">
+                  <span class="metric-main-value">High (98/100)</span>
+                  <div class="metric-sub-delta">
+                    <span class="metric-delta-tag tag-blue">Protected</span>
+                    <span>2FA Enabled</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="metric-card">
+                <div class="metric-card-top">
+                  <span class="metric-label">Credit Monitoring</span>
+                  <span class="metric-arrow-badge">↗</span>
+                </div>
+                <div class="metric-value-group">
+                  <span class="metric-main-value">782 Score</span>
+                  <div class="metric-sub-delta">
+                    <span class="metric-delta-tag tag-green">+14 pts</span>
+                    <span>Excellent Range</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="metric-card">
+                <div class="metric-card-top">
+                  <span class="metric-label">Active Auto-SIPs</span>
+                  <span class="metric-arrow-badge">↗</span>
+                </div>
+                <div class="metric-value-group">
+                  <span class="metric-main-value">2 Plans</span>
+                  <div class="metric-sub-delta">
+                    <span class="metric-delta-tag tag-blue">On Track</span>
+                    <span>Recurring Wealth</span>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+            <!-- Product Areas -->
+            <section class="product-areas-grid">
+              <div class="product-saas-card">
+                <div class="product-card-top-row">
+                  <div class="product-icon-wrap">⚡</div>
+                  <span class="product-badge-subtle">Payments</span>
+                </div>
+                <div class="product-card-body">
+                  <h3 class="product-card-title">UPI & Instant Transfers</h3>
+                  <p class="product-card-desc">Understanding UPI limits, QR code security, and safe payment verification guidelines.</p>
+                </div>
+                <div class="product-card-action-link">
+                  <span>Learn Safety Tips →</span>
+                </div>
+              </div>
+
+              <div class="product-saas-card">
+                <div class="product-card-top-row">
+                  <div class="product-icon-wrap">🆔</div>
+                  <span class="product-badge-subtle">Onboarding</span>
+                </div>
+                <div class="product-card-body">
+                  <h3 class="product-card-title">DigiLocker & Paperless KYC</h3>
+                  <p class="product-card-desc">How electronic document verification enables instant loan approvals and zero paperwork.</p>
+                </div>
+                <div class="product-card-action-link">
+                  <span>Explore KYC Guide →</span>
+                </div>
+              </div>
+
+              <div class="product-saas-card">
+                <div class="product-card-top-row">
+                  <div class="product-icon-wrap">📈</div>
+                  <span class="product-badge-subtle">Wealth</span>
+                </div>
+                <div class="product-card-body">
+                  <h3 class="product-card-title">Automated Wealth Tech</h3>
+                  <p class="product-card-desc">Demystifying micro-investing, mutual fund index tracking, and portfolio rebalancing.</p>
+                </div>
+                <div class="product-card-action-link">
+                  <span>Explore Investing →</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Transparency Card -->
+            <section class="transparency-clean-card">
+              <div class="transparency-header">
+                <div class="transparency-icon">🛡️</div>
+                <div class="transparency-title-wrap">
+                  <h2 class="transparency-title">Digital Safety & Fraud Prevention Rules</h2>
+                  <p class="transparency-sub">Essential practices for navigating digital financial apps.</p>
+                </div>
+              </div>
+
+              <div class="transparency-grid-4">
+                <div class="transparency-item">
+                  <h3 class="transparency-item-title">Never Share UPI PIN</h3>
+                  <p class="transparency-item-desc">UPI PIN is only required to SEND money, never to RECEIVE funds or claim rewards.</p>
+                </div>
+                <div class="transparency-item">
+                  <h3 class="transparency-item-title">Verify QR Codes</h3>
+                  <p class="transparency-item-desc">Always confirm merchant name before completing any scanned QR payment.</p>
+                </div>
+                <div class="transparency-item">
+                  <h3 class="transparency-item-title">Official App Stores</h3>
+                  <p class="transparency-item-desc">Install banking and fintech apps exclusively from Google Play or Apple App Store.</p>
+                </div>
+                <div class="transparency-item">
+                  <h3 class="transparency-item-title">Report Instant Block</h3>
+                  <p class="transparency-item-desc">Use national helpline 1930 immediately if you spot any unauthorized transaction.</p>
+                </div>
+              </div>
+            </section>
+
+          </main>
+
+          <!-- RIGHT COLUMN AI COMPANION -->
+          <aside class="dashboard-right-column" id="aiSection">
+            <div class="ai-companion-card">
+              <div class="ai-card-header">
+                <div class="ai-header-brand">
+                  <div class="ai-sparkle-dot">✦</div>
+                  <span class="ai-card-title">Finora AI</span>
+                </div>
+                <div class="ai-status-badge">
+                  <span class="ai-status-pulse"></span>
+                  <span>Online</span>
+                </div>
+              </div>
+
+              <div class="ai-dialogue-body" id="homeAiChatBody">
+                <div class="ai-msg-bubble">
+                  Hi Brightlin 👋<br><br>
+                  Ask me anything about UPI limits, digital KYC verification, or fintech payment safety!
+                </div>
+              </div>
+
+              <div class="ai-chips-container">
+                <span class="ai-chips-label">Quick actions</span>
+                <div class="ai-chips-list">
+                  <button type="button" class="ai-chip-pill" data-intent="Explore fintech">
+                    <span>Explore fintech services</span>
+                    <span class="chip-arrow">→</span>
+                  </button>
+                  <button type="button" class="ai-chip-pill" data-intent="Explain a financial term">
+                    <span>What is Digital KYC?</span>
+                    <span class="chip-arrow">→</span>
+                  </button>
+                  <button type="button" class="ai-chip-pill" data-intent="Help me prepare">
+                    <span>Security best practices</span>
+                    <span class="chip-arrow">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <form class="ai-chat-input-form" id="homeAiForm">
+                <input type="text" id="homeAiInput" class="ai-chat-text-input" placeholder="Ask Finora AI...">
+                <button type="submit" class="ai-send-btn-black" aria-label="Send">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="dashboard-site-footer">
+      <div class="footer-left-brand">
+        <span class="footer-brand-title">Finora</span>
+        <span>•</span>
+        <span>Simpler Journeys. Brighter Futures.</span>
+      </div>
+      <nav class="footer-nav-links">
+        <a href="index.html">Home</a>
+        <a href="loans.html">Loans</a>
+        <a href="insurance.html">Insurance</a>
+        <a href="fintech.html">Fintech</a>
+      </nav>
+    </footer>
+
+    <!-- MOBILE DOCK -->
+    <nav class="mobile-bottom-dock">
+      <a href="index.html" class="mobile-dock-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="loans.html" class="mobile-dock-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="21" x2="21" y2="21"></line>
+          <polyline points="5 6 12 3 19 6"></polyline>
+        </svg>
+        <span>Loans</span>
+      </a>
+      <a href="fintech.html" class="mobile-dock-btn active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+        </svg>
+        <span>Fintech</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
