@@ -2129,3 +2129,57 @@ img, svg {
   width: 20px;
   height: 20px;
 }
+
+/* --------------------------------------------------------------------------
+   21. PURE CSS UTILITY CLASSES (ZERO INLINE STYLES)
+   -------------------------------------------------------------------------- */
+.avatar-advisor-1 {
+  background: #E2E8F0;
+}
+
+.avatar-advisor-2 {
+  background: #CBD5E1;
+}
+
+/* Stepper Status Widths */
+.step-fill-100 {
+  width: 100%;
+}
+
+.step-fill-60 {
+  width: 60%;
+}
+
+.step-fill-0 {
+  width: 0%;
+}
+
+/* Performance Overview Bar Chart Heights */
+.bar-h-jan-target { height: 40px; }
+.bar-h-jan-actual { height: 25px; }
+
+.bar-h-feb-target { height: 65px; }
+.bar-h-feb-actual { height: 45px; }
+
+.bar-h-mar-target { height: 85px; }
+.bar-h-mar-actual { height: 60px; }
+
+.bar-h-apr-target { height: 35px; }
+.bar-h-apr-actual { height: 20px; }
+
+.bar-h-may-target { height: 75px; }
+.bar-h-may-actual { height: 55px; }
+
+.bar-h-jun-target { height: 80px; }
+.bar-h-jun-actual { height: 72px; }
+
+/* Alignment and Chat Spacing */
+.chart-footer-note-bottom {
+  margin-top: auto;
+}
+
+.ai-bullet-item {
+  margin-left: 8px;
+  margin-bottom: 3px;
+}
+

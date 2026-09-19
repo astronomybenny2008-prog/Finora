@@ -258,7 +258,7 @@ function formatMarkdownText(text) {
   // Bold
   formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   // Bullets
-  formatted = formatted.replace(/• (.*?)(?:\n|$)/g, '<div style="margin-left: 8px; margin-bottom: 3px;">• $1</div>');
+  formatted = formatted.replace(/• (.*?)(?:\n|$)/g, '<div class="ai-bullet-item">• $1</div>');
   // Newlines
   formatted = formatted.replace(/\n/g, '<br>');
   return formatted;
