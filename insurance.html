@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finora Insurance — AI-Powered Insurance Journeys. Understand coverage, demystify policy terminology, analyze documents, and navigate health, life, vehicle, and home insurance with transparent AI guidance.">
+  <meta name="theme-color" content="#0b1329">
+  <title>Insurance Journey — Finora | AI-Powered Financial Journeys</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/insurance.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- ====================================================================
+         GLOBAL FIXED HEADER / NAVIGATION
+         ==================================================================== -->
+    <header class="top-header" role="banner">
+      <div class="header-inner">
+        
+        <!-- Brand Logo & Tagline -->
+        <a href="index.html" class="brand-wrapper" aria-label="Finora Home">
+          <svg class="brand-icon" viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 28C17.5228 28 22 23.5228 22 18C22 12.4772 17.5228 8 12 8C6.47715 8 2 12.4772 2 18C2 23.5228 6.47715 28 12 28Z" fill="url(#brandGrad1)"/>
+            <path d="M26 32C31.5228 32 36 27.5228 36 22C36 16.4772 31.5228 12 26 12C20.4772 12 16 16.4772 16 22C16 27.5228 20.4772 32 26 32Z" fill="url(#brandGrad2)" fill-opacity="0.9"/>
+            <defs>
+              <linearGradient id="brandGrad1" x1="2" y1="8" x2="22" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2563EB"/>
+                <stop offset="1" stop-color="#1D4ED8"/>
+              </linearGradient>
+              <linearGradient id="brandGrad2" x1="16" y1="12" x2="36" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#06B6D4"/>
+                <stop offset="1" stop-color="#3B82F6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="brand-text-group">
+            <span class="brand-name">Finora</span>
+            <span class="brand-tagline">Simpler Journeys. Brighter Futures.</span>
+          </div>
+        </a>
+
+        <!-- Global Navigation Links -->
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="loans.html" class="nav-link">Products</a>
+          <a href="ai-assistant.html" class="nav-link">AI Assistant</a>
+          <a href="knowledge-hub.html" class="nav-link">Resources</a>
+          <a href="#about" class="nav-link">About</a>
+        </nav>
+
+        <!-- Header Actions / Profile -->
+        <div class="header-actions">
+          
+          <!-- Search Bar -->
+          <div class="header-search">
+            <div class="search-input-wrapper">
+              <svg class="search-icon" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="9" cy="9" r="6"></circle>
+                <line x1="18" y1="18" x2="13.5" y2="13.5"></line>
+              </svg>
+              <input type="search" id="globalSearchInput" class="search-input" placeholder="Search financial topics..." aria-label="Search financial topics">
+              <span class="search-shortcut" aria-hidden="true">Ctrl K</span>
+            </div>
+          </div>
+
+          <!-- Notification Bell -->
+          <button class="btn-icon" id="notificationBtn" aria-label="Notifications (1 unread)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-badge" aria-hidden="true"></span>
+          </button>
+
+          <!-- User Profile Area -->
+          <div class="user-profile-badge" id="userProfileBadge" role="button" tabindex="0" aria-label="User Profile Brightlin">
+            <div class="avatar-circle" aria-hidden="true">BB</div>
+            <div class="user-details">
+              <span class="user-greeting">Welcome</span>
+              <span class="user-name">Brightlin</span>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open mobile navigation menu" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Backdrop & Drawer -->
+    <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop" aria-hidden="true"></div>
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <div class="mobile-drawer-header">
+        <div class="brand-wrapper">
+          <svg class="brand-icon" viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 28C17.5228 28 22 23.5228 22 18C22 12.4772 17.5228 8 12 8C6.47715 8 2 12.4772 2 18C2 23.5228 6.47715 28 12 28Z" fill="url(#brandGradDrawer1)"/>
+            <path d="M26 32C31.5228 32 36 27.5228 36 22C36 16.4772 31.5228 12 26 12C20.4772 12 16 16.4772 16 22C16 27.5228 20.4772 32 26 32Z" fill="url(#brandGradDrawer2)" fill-opacity="0.9"/>
+            <defs>
+              <linearGradient id="brandGradDrawer1" x1="2" y1="8" x2="22" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2563EB"/>
+                <stop offset="1" stop-color="#1D4ED8"/>
+              </linearGradient>
+              <linearGradient id="brandGradDrawer2" x1="16" y1="12" x2="36" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#06B6D4"/>
+                <stop offset="1" stop-color="#3B82F6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="brand-text-group">
+            <span class="brand-name">Finora</span>
+            <span class="brand-tagline">Simpler Journeys. Brighter Futures.</span>
+          </div>
+        </div>
+        <button class="mobile-drawer-close-btn" id="mobileDrawerClose" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-drawer-search">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="9" cy="9" r="6"></circle>
+            <line x1="18" y1="18" x2="13.5" y2="13.5"></line>
+          </svg>
+          <input type="search" class="search-input" placeholder="Search topics..." aria-label="Mobile search">
+        </div>
+      </div>
+
+      <nav class="mobile-drawer-nav">
+        <a href="index.html" class="mobile-nav-link">
+          <span>🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="loans.html" class="mobile-nav-link">
+          <span>🏦</span>
+          <span>Loans Journey</span>
+        </a>
+        <a href="insurance.html" class="mobile-nav-link active" aria-current="page">
+          <span>🛡️</span>
+          <span>Insurance Journey</span>
+        </a>
+        <a href="fintech.html" class="mobile-nav-link">
+          <span>💳</span>
+          <span>Fintech Services</span>
+        </a>
+        <a href="ai-assistant.html" class="mobile-nav-link">
+          <span>✨</span>
+          <span>AI Assistant</span>
+        </a>
+        <a href="my-journey.html" class="mobile-nav-link">
+          <span>🗺️</span>
+          <span>My Journey</span>
+        </a>
+        <a href="knowledge-hub.html" class="mobile-nav-link">
+          <span>📚</span>
+          <span>Knowledge Hub</span>
+        </a>
+      </nav>
+
+      <div class="mobile-drawer-footer">
+        <a href="ai-assistant.html" class="btn btn-primary btn-hero-glow">
+          <span>Start Your Journey</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         APP BODY LAYOUT: PERSISTENT SIDEBAR + MAIN INSURANCE CONTENT
+         ==================================================================== -->
+    <div class="app-body">
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar" aria-label="Journey Sidebar Navigation">
+        <nav class="sidebar-nav">
+          
+          <a href="index.html" class="sidebar-link">
+            <svg class="sidebar-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Home</span>
+          </a>
+
+          <a href="loans.html" class="sidebar-link">
+            <svg class="sidebar-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="3" y1="21" x2="21" y2="21"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <polyline points="5 6 12 3 19 6"></polyline>
+              <line x1="6" y1="10" x2="6" y2="21"></line>
+              <line x1="10" y1="10" x2="10" y2="21"></line>
+              <line x1="14" y1="10" x2="14" y2="21"></line>
+              <line x1="18" y1="10" x2="18" y2="21"></line>
+            </svg>
+            <span>Loans</span>
+          </a>
+
+          <a href="insurance.html" class="sidebar-link active" aria-current="page">
+            <svg class="sidebar-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Insurance</span>
+          </a>
+
+          <a href="fintech.html" class="sidebar-link">
+            <svg class="sidebar-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <line x1="2" y1="10" x2="22" y2="10"></line>
+            </svg>
+            <span>Fintech</span>
+          </a>
+
+          <a href="ai-assistant.html" class="sidebar-link">
+            <svg class="sidebar-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+            </svg>
+            <span>AI Assistant</span>
+          </a>
+
+          <a href="my-journey.html" class="sidebar-link">
+            <svg class="sidebar-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+            <span>My Journey</span>
+          </a>
+
+          <a href="knowledge-hub.html" class="sidebar-link">
+            <svg class="sidebar-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <span>Knowledge Hub</span>
+          </a>
+
+        </nav>
+
+        <!-- Sidebar Inspiration Quote Card -->
+        <div class="sidebar-quote-card">
+          <p class="sidebar-quote-text">“Protection today for a brighter tomorrow.”</p>
+          <div class="sidebar-brand-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Finora Insurance</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ==================================================================
+           MAIN CONTENT AREA
+           ================================================================== -->
+      <main class="main-content" id="mainContent" role="main">
+
+        <div class="ins-page-container">
+          
+          <!-- BREADCRUMB -->
+          <nav class="ins-breadcrumb-nav" aria-label="Breadcrumb">
+            <ol class="ins-breadcrumb-list">
+              <li class="ins-breadcrumb-item">
+                <a href="index.html" class="ins-breadcrumb-link">Home</a>
+              </li>
+              <li class="ins-breadcrumb-item">
+                <span class="ins-breadcrumb-separator" aria-hidden="true">></span>
+                <span class="ins-breadcrumb-current" aria-current="page">Insurance</span>
+              </li>
+            </ol>
+          </nav>
+
+          <!-- 2-COLUMN LAYOUT: MAIN JOURNEY + RIGHT AI SIDEBAR -->
+          <div class="ins-layout-grid">
+            
+            <!-- LEFT MAIN CONTENT COLUMN -->
+            <div class="ins-main-column">
+              
+              <!-- ==========================================================
+                   SECTION 1 — HERO SECTION
+                   ========================================================== -->
+              <section class="ins-hero-card" aria-labelledby="insHeroHeading">
+                <div class="ins-hero-glow-accent" aria-hidden="true"></div>
+
+                <div class="ins-hero-grid">
+                  
+                  <!-- Left Text & Actions -->
+                  <div class="ins-hero-content">
+                    <div class="ins-hero-eyebrow">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      </svg>
+                      <span>AI-POWERED INSURANCE JOURNEY</span>
+                    </div>
+
+                    <h1 id="insHeroHeading" class="ins-hero-heading">
+                      Insurance, made <span class="ins-heading-highlight">easier</span> to understand.
+                    </h1>
+
+                    <p class="ins-hero-supporting">
+                      Understand coverage. Explore key terms. Navigate the journey with AI guidance.
+                    </p>
+
+                    <p class="ins-hero-desc">
+                      Insurance can involve unfamiliar terminology, detailed policy information and multiple steps. Finora helps users understand the journey before they proceed.
+                    </p>
+
+                    <div class="ins-hero-btn-group">
+                      <a href="#journeySection" class="btn-ins-primary">
+                        <span>Start Insurance Journey</span>
+                        <span aria-hidden="true">→</span>
+                      </a>
+                      <a href="#terminologySection" class="btn-ins-secondary" id="understandInsuranceBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <line x1="12" y1="16" x2="12" y2="12"></line>
+                          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <span>Understand Insurance</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Right Hero Visual with 3D Image & Floating Badges -->
+                  <div class="ins-hero-visual-wrapper">
+                    <div class="ins-hero-visual-container">
+                      <img src="assets/images/insurance-hero-visual.jpg" alt="3D illustration representing health, life, vehicle, and home insurance protection with AI guidance" class="ins-hero-img">
+                      
+                      <!-- Overlay Quotes -->
+                      <div class="ins-float-quote-top" aria-hidden="true">Different stages of life. A safer tomorrow.</div>
+                      <div class="ins-float-quote-right" aria-hidden="true">People · Plans · Protection · Possibilities</div>
+
+                      <!-- Floating Badges -->
+                      <div class="ins-float-badge ins-float-badge-health" aria-hidden="true">
+                        <span>🛡️</span>
+                        <span>Health Cover</span>
+                      </div>
+
+                      <div class="ins-float-badge ins-float-badge-life" aria-hidden="true">
+                        <span>👥</span>
+                        <span>Life Protection</span>
+                      </div>
+
+                      <div class="ins-float-badge ins-float-badge-vehicle" aria-hidden="true">
+                        <span>🚗</span>
+                        <span>Vehicle Security</span>
+                      </div>
+
+                      <div class="ins-float-badge ins-float-badge-home" aria-hidden="true">
+                        <span>🏠</span>
+                        <span>Home Shield</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 2 — WHAT KIND OF PROTECTION? (EXPLORE INSURANCE JOURNEYS)
+                   ========================================================== -->
+              <section class="ins-section" id="exploreSection" aria-labelledby="exploreHeading">
+                <div class="ins-section-header-flex">
+                  <div class="ins-section-title-wrap">
+                    <h2 id="exploreHeading" class="ins-section-title">Explore Insurance Journeys</h2>
+                    <p class="ins-section-subhead">Different needs can involve different types of insurance. Start by understanding the journey.</p>
+                  </div>
+                  <a href="#knowledgeSection" class="ins-view-all-link">
+                    <span>View all</span>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+
+                <div class="ins-options-grid">
+                  
+                  <!-- Card 1: Health Insurance -->
+                  <article class="ins-option-card ins-option-card-health" data-ins-type="health" tabindex="0" role="button" aria-label="Explore Health Insurance">
+                    <div class="ins-option-icon-wrap ins-icon-health" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        <line x1="12" y1="8" x2="12" y2="14"></line>
+                        <line x1="9" y1="11" x2="15" y2="11"></line>
+                      </svg>
+                    </div>
+                    <div class="ins-option-category-tag">Medical & Wellness</div>
+                    <h3 class="ins-option-title">Health Insurance</h3>
+                    <p class="ins-option-desc">Understand basic health insurance concepts, coverage, policy terms and claims.</p>
+                    <div class="ins-option-highlight-row">
+                      <span class="ins-tag-pill">Cashless Claims</span>
+                      <span class="ins-tag-pill">₹5L - ₹1Cr Cover</span>
+                    </div>
+                    <span class="ins-option-action">
+                      <span>Explore</span>
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </article>
+
+                  <!-- Card 2: Life Insurance -->
+                  <article class="ins-option-card ins-option-card-life" data-ins-type="life" tabindex="0" role="button" aria-label="Explore Life Insurance">
+                    <div class="ins-option-icon-wrap ins-icon-life" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                      </svg>
+                    </div>
+                    <div class="ins-option-category-tag">Family Protection</div>
+                    <h3 class="ins-option-title">Life Insurance</h3>
+                    <p class="ins-option-desc">Learn about life insurance concepts, policy terms, beneficiaries and the overall journey.</p>
+                    <div class="ins-option-highlight-row">
+                      <span class="ins-tag-pill">Term Plans</span>
+                      <span class="ins-tag-pill">Financial Security</span>
+                    </div>
+                    <span class="ins-option-action">
+                      <span>Explore</span>
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </article>
+
+                  <!-- Card 3: Vehicle Insurance -->
+                  <article class="ins-option-card ins-option-card-vehicle" data-ins-type="vehicle" tabindex="0" role="button" aria-label="Explore Vehicle Insurance">
+                    <div class="ins-option-icon-wrap ins-icon-vehicle" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="3" width="15" height="13"></rect>
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                        <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                      </svg>
+                    </div>
+                    <div class="ins-option-category-tag">Motor & Mobility</div>
+                    <h3 class="ins-option-title">Vehicle Insurance</h3>
+                    <p class="ins-option-desc">Understand vehicle insurance coverage, policy terms and the claim process.</p>
+                    <div class="ins-option-highlight-row">
+                      <span class="ins-tag-pill">Comprehensive</span>
+                      <span class="ins-tag-pill">Third-Party Cover</span>
+                    </div>
+                    <span class="ins-option-action">
+                      <span>Explore</span>
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </article>
+
+                  <!-- Card 4: Home Insurance -->
+                  <article class="ins-option-card ins-option-card-home" data-ins-type="home" tabindex="0" role="button" aria-label="Explore Home Insurance">
+                    <div class="ins-option-icon-wrap ins-icon-home" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                      </svg>
+                    </div>
+                    <div class="ins-option-category-tag">Property & Asset</div>
+                    <h3 class="ins-option-title">Home Insurance</h3>
+                    <p class="ins-option-desc">Learn how home insurance works and understand common coverage concepts.</p>
+                    <div class="ins-option-highlight-row">
+                      <span class="ins-tag-pill">Structure & Contents</span>
+                      <span class="ins-tag-pill">Natural Hazards</span>
+                    </div>
+                    <span class="ins-option-action">
+                      <span>Explore</span>
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </article>
+
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 3 — UNDERSTAND INSURANCE IN SIMPLE LANGUAGE (TERMINOLOGY)
+                   ========================================================== -->
+              <section class="ins-section" id="terminologySection" aria-labelledby="terminologyHeading">
+                <div class="ins-section-header-flex">
+                  <div class="ins-section-title-wrap">
+                    <h2 id="terminologyHeading" class="ins-section-title">Insurance shouldn't feel like a dictionary.</h2>
+                    <p class="ins-section-subhead">Understand important insurance terms without complicated language.</p>
+                  </div>
+                  <button type="button" class="ins-view-all-link ins-btn-link" id="viewAllTermsBtn">
+                    <span>View all terms</span>
+                    <span aria-hidden="true">→</span>
+                  </button>
+                </div>
+
+                <div class="ins-terms-grid">
+                  
+                  <!-- Term 1: Premium -->
+                  <div class="ins-term-card" data-term-key="premium" tabindex="0" role="button" aria-label="Learn about Premium">
+                    <div class="ins-term-header">
+                      <div class="ins-term-icon" aria-hidden="true">💳</div>
+                      <h3 class="ins-term-name">Premium</h3>
+                    </div>
+                    <p class="ins-term-explanation">The amount a policyholder pays to maintain insurance coverage, according to the policy terms (e.g. ₹8,500/year or ₹850/month).</p>
+                    <button type="button" class="ins-term-ai-btn" data-ask-term="Explain premium">
+                      <span>Ask Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+
+                  <!-- Term 2: Coverage -->
+                  <div class="ins-term-card" data-term-key="coverage" tabindex="0" role="button" aria-label="Learn about Coverage">
+                    <div class="ins-term-header">
+                      <div class="ins-term-icon" aria-hidden="true">🛡️</div>
+                      <h3 class="ins-term-name">Coverage</h3>
+                    </div>
+                    <p class="ins-term-explanation">The specific risks, events, treatments, or situations protected by the insurance policy against financial losses.</p>
+                    <button type="button" class="ins-term-ai-btn" data-ask-term="What does coverage mean?">
+                      <span>Ask Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+
+                  <!-- Term 3: Policy -->
+                  <div class="ins-term-card" data-term-key="policy" tabindex="0" role="button" aria-label="Learn about Policy">
+                    <div class="ins-term-header">
+                      <div class="ins-term-icon" aria-hidden="true">📄</div>
+                      <h3 class="ins-term-name">Policy</h3>
+                    </div>
+                    <p class="ins-term-explanation">The legal contract and formal agreement between the policyholder and the authorised insurance company.</p>
+                    <button type="button" class="ins-term-ai-btn" data-ask-term="What is an insurance policy?">
+                      <span>Ask Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+
+                  <!-- Term 4: Claim -->
+                  <div class="ins-term-card" data-term-key="claim" tabindex="0" role="button" aria-label="Learn about Claim">
+                    <div class="ins-term-header">
+                      <div class="ins-term-icon" aria-hidden="true">📝</div>
+                      <h3 class="ins-term-name">Claim</h3>
+                    </div>
+                    <p class="ins-term-explanation">A formal request submitted to the insurer asking for reimbursement or payout when a covered event occurs.</p>
+                    <button type="button" class="ins-term-ai-btn" data-ask-term="How does an insurance claim work?">
+                      <span>Ask Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+
+                  <!-- Term 5: Deductible -->
+                  <div class="ins-term-card" data-term-key="deductible" tabindex="0" role="button" aria-label="Learn about Deductible">
+                    <div class="ins-term-header">
+                      <div class="ins-term-icon" aria-hidden="true">💰</div>
+                      <h3 class="ins-term-name">Deductible</h3>
+                    </div>
+                    <p class="ins-term-explanation">The pre-agreed amount you pay out-of-pocket before insurance coverage covers the remaining cost (e.g. ₹5,000).</p>
+                    <button type="button" class="ins-term-ai-btn" data-ask-term="What is a deductible?">
+                      <span>Ask Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+
+                  <!-- Term 6: Exclusion -->
+                  <div class="ins-term-card" data-term-key="exclusion" tabindex="0" role="button" aria-label="Learn about Exclusion">
+                    <div class="ins-term-header">
+                      <div class="ins-term-icon" aria-hidden="true">🚫</div>
+                      <h3 class="ins-term-name">Exclusion</h3>
+                    </div>
+                    <p class="ins-term-explanation">Specific events, conditions, treatments, or hazards that are explicitly NOT covered by the insurance policy.</p>
+                    <button type="button" class="ins-term-ai-btn" data-ask-term="What is an exclusion in insurance?">
+                      <span>Ask Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+
+                  <!-- Term 7: Waiting Period -->
+                  <div class="ins-term-card" data-term-key="waiting_period" tabindex="0" role="button" aria-label="Learn about Waiting Period">
+                    <div class="ins-term-header">
+                      <div class="ins-term-icon" aria-hidden="true">⏳</div>
+                      <h3 class="ins-term-name">Waiting Period</h3>
+                    </div>
+                    <p class="ins-term-explanation">The time duration after purchasing a policy before certain benefits or pre-existing condition cover become active.</p>
+                    <button type="button" class="ins-term-ai-btn" data-ask-term="Explain waiting period">
+                      <span>Ask Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+
+                  <!-- Term 8: Sum Insured -->
+                  <div class="ins-term-card" data-term-key="sum_insured" tabindex="0" role="button" aria-label="Learn about Sum Insured">
+                    <div class="ins-term-header">
+                      <div class="ins-term-icon" aria-hidden="true">🎯</div>
+                      <h3 class="ins-term-name">Sum Insured</h3>
+                    </div>
+                    <p class="ins-term-explanation">The maximum guaranteed financial protection limit the insurer agrees to pay during the policy year (e.g. ₹10 Lakhs).</p>
+                    <button type="button" class="ins-term-ai-btn" data-ask-term="What is sum insured?">
+                      <span>Ask Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+
+                  <!-- Term 9: Policy Term -->
+                  <div class="ins-term-card" data-term-key="policy_term" tabindex="0" role="button" aria-label="Learn about Policy Term">
+                    <div class="ins-term-header">
+                      <div class="ins-term-icon" aria-hidden="true">📅</div>
+                      <h3 class="ins-term-name">Policy Term</h3>
+                    </div>
+                    <p class="ins-term-explanation">The designated duration of time for which the insurance policy provides active coverage (e.g. 1 Year, 10 Years, 30 Years).</p>
+                    <button type="button" class="ins-term-ai-btn" data-ask-term="Explain policy term">
+                      <span>Ask Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+
+                  <!-- Term 10: Renewal -->
+                  <div class="ins-term-card" data-term-key="renewal" tabindex="0" role="button" aria-label="Learn about Renewal">
+                    <div class="ins-term-header">
+                      <div class="ins-term-icon" aria-hidden="true">🔄</div>
+                      <h3 class="ins-term-name">Renewal</h3>
+                    </div>
+                    <p class="ins-term-explanation">Extending or continuing the insurance policy coverage for another cycle by paying the renewal premium before due date.</p>
+                    <button type="button" class="ins-term-ai-btn" data-ask-term="How does insurance renewal work?">
+                      <span>Ask Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 4 — YOUR INSURANCE JOURNEY (TIMELINE)
+                   ========================================================== -->
+              <section class="ins-section" id="journeySection" aria-labelledby="journeyHeading">
+                <div class="ins-section-header-flex">
+                  <div class="ins-section-title-wrap">
+                    <h2 id="journeyHeading" class="ins-section-title">Your Insurance Journey</h2>
+                    <p class="ins-section-subhead">Understand each stage before moving forward.</p>
+                  </div>
+                </div>
+
+                <div class="ins-journey-timeline" role="tablist" aria-label="Insurance Journey Steps">
+                  
+                  <!-- Step 01 -->
+                  <button type="button" class="ins-journey-step active-step" data-step-index="0" role="tab" aria-selected="true" aria-label="Step 1 Understand">
+                    <div class="ins-step-circle">01</div>
+                    <span class="ins-step-title">Understand</span>
+                    <span class="ins-step-desc">Learn what insurance is and what you want to protect.</span>
+                  </button>
+
+                  <!-- Step 02 -->
+                  <button type="button" class="ins-journey-step" data-step-index="1" role="tab" aria-selected="false" aria-label="Step 2 Explore">
+                    <div class="ins-step-circle">02</div>
+                    <span class="ins-step-title">Explore</span>
+                    <span class="ins-step-desc">Understand different coverage concepts and policy features.</span>
+                  </button>
+
+                  <!-- Step 03 -->
+                  <button type="button" class="ins-journey-step" data-step-index="2" role="tab" aria-selected="false" aria-label="Step 3 Compare">
+                    <div class="ins-step-circle">03</div>
+                    <span class="ins-step-title">Compare</span>
+                    <span class="ins-step-desc">Review relevant information and understand differences between options.</span>
+                  </button>
+
+                  <!-- Step 04 -->
+                  <button type="button" class="ins-journey-step" data-step-index="3" role="tab" aria-selected="false" aria-label="Step 4 Choose">
+                    <div class="ins-step-circle">04</div>
+                    <span class="ins-step-title">Choose</span>
+                    <span class="ins-step-desc">Review the policy information and conditions carefully.</span>
+                  </button>
+
+                  <!-- Step 05 -->
+                  <button type="button" class="ins-journey-step" data-step-index="4" role="tab" aria-selected="false" aria-label="Step 5 Claim / Manage">
+                    <div class="ins-step-circle">05</div>
+                    <span class="ins-step-title">Claim / Manage</span>
+                    <span class="ins-step-desc">Understand what happens when you need to use or manage your policy.</span>
+                  </button>
+
+                </div>
+
+                <!-- Interactive Step Detail Card -->
+                <div class="ins-step-detail-card" id="insStepDetailCard">
+                  <div class="ins-detail-left">
+                    <div class="ins-detail-icon-pill" id="insDetailStepNum">01</div>
+                    <div class="ins-detail-content">
+                      <h4 class="ins-detail-title" id="insDetailTitle">01 — Understand What Insurance Is & What You Want to Protect</h4>
+                      <p class="ins-detail-text" id="insDetailText">Identify your core protection priorities: medical emergencies for family, life security for dependents, vehicle liability, or asset protection for home. Understanding what risks you want to safeguard against prevents under-insuring or over-paying.</p>
+                      <div class="ins-detail-tip-row" id="insDetailTip">
+                        <span class="ins-tip-icon">💡</span>
+                        <span class="ins-tip-text">AI Guidance: Rule of thumb in India for Term Life cover is 10–15x your annual income, while Health cover should adequately match healthcare inflation.</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-ins-action" id="insDetailActionBtn">Explore Protection Types</button>
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 6 — UNDERSTAND YOUR POLICY (DOCUMENT STRUCTURE)
+                   ========================================================== -->
+              <section class="ins-section" id="policyStructureSection" aria-labelledby="policyHeading">
+                <div class="ins-section-header-flex">
+                  <div class="ins-section-title-wrap">
+                    <h2 id="policyHeading" class="ins-section-title">Understand before you commit.</h2>
+                    <p class="ins-section-subhead">Insurance documents can contain important conditions and terminology. Finora helps you identify what to read and understand.</p>
+                  </div>
+                </div>
+
+                <div class="ins-policy-visual-card">
+                  <div class="ins-policy-sheet-header">
+                    <div class="ins-policy-doc-badge">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                      </svg>
+                      <span>Standard Policy Schedule & Clauses Visualizer</span>
+                    </div>
+                    <span class="ins-policy-demo-tag">Interactive Anatomy</span>
+                  </div>
+
+                  <div class="ins-policy-sections-grid">
+                    
+                    <!-- Section 1: Coverage -->
+                    <div class="ins-policy-section-item" data-section-name="Coverage" tabindex="0" role="button">
+                      <div class="ins-policy-sec-top">
+                        <span class="ins-sec-num">01</span>
+                        <h3 class="ins-sec-name">Coverage</h3>
+                      </div>
+                      <p class="ins-sec-desc">Defines what treatments, illnesses, hospital charges, or damage are financially protected.</p>
+                      <span class="ins-sec-click-hint">Click to inspect →</span>
+                    </div>
+
+                    <!-- Section 2: Exclusions -->
+                    <div class="ins-policy-section-item" data-section-name="Exclusions" tabindex="0" role="button">
+                      <div class="ins-policy-sec-top">
+                        <span class="ins-sec-num">02</span>
+                        <h3 class="ins-sec-name">Exclusions</h3>
+                      </div>
+                      <p class="ins-sec-desc">Crucial clauses listing permanent exclusions, non-medical items, or uncovered conditions.</p>
+                      <span class="ins-sec-click-hint">Click to inspect →</span>
+                    </div>
+
+                    <!-- Section 3: Waiting Period -->
+                    <div class="ins-policy-section-item" data-section-name="Waiting Period" tabindex="0" role="button">
+                      <div class="ins-policy-sec-top">
+                        <span class="ins-sec-num">03</span>
+                        <h3 class="ins-sec-name">Waiting Period</h3>
+                      </div>
+                      <p class="ins-sec-desc">Details initial 30-day moratorium, 2-year specific ailment waiting, and pre-existing disease terms.</p>
+                      <span class="ins-sec-click-hint">Click to inspect →</span>
+                    </div>
+
+                    <!-- Section 4: Deductible -->
+                    <div class="ins-policy-section-item" data-section-name="Deductible & Co-pay" tabindex="0" role="button">
+                      <div class="ins-policy-sec-top">
+                        <span class="ins-sec-num">04</span>
+                        <h3 class="ins-sec-name">Deductible & Co-Pay</h3>
+                      </div>
+                      <p class="ins-sec-desc">The compulsory or voluntary amount you share during hospitalisation or motor repair claims.</p>
+                      <span class="ins-sec-click-hint">Click to inspect →</span>
+                    </div>
+
+                    <!-- Section 5: Claim Conditions -->
+                    <div class="ins-policy-section-item" data-section-name="Claim Conditions" tabindex="0" role="button">
+                      <div class="ins-policy-sec-top">
+                        <span class="ins-sec-num">05</span>
+                        <h3 class="ins-sec-name">Claim Conditions</h3>
+                      </div>
+                      <p class="ins-sec-desc">Timelines for intimation (e.g. within 24–48 hours) and required documents for reimbursement.</p>
+                      <span class="ins-sec-click-hint">Click to inspect →</span>
+                    </div>
+
+                    <!-- Section 6: Renewal -->
+                    <div class="ins-policy-section-item" data-section-name="Renewal & Grace Period" tabindex="0" role="button">
+                      <div class="ins-policy-sec-top">
+                        <span class="ins-sec-num">06</span>
+                        <h3 class="ins-sec-name">Renewal & Grace Period</h3>
+                      </div>
+                      <p class="ins-sec-desc">Lifetime renewability conditions, grace period (30 days), and No Claim Bonus (NCB) accrual.</p>
+                      <span class="ins-sec-click-hint">Click to inspect →</span>
+                    </div>
+
+                    <!-- Section 7: Policy Term -->
+                    <div class="ins-policy-section-item" data-section-name="Policy Term & Sum Insured" tabindex="0" role="button">
+                      <div class="ins-policy-sec-top">
+                        <span class="ins-sec-num">07</span>
+                        <h3 class="ins-sec-name">Policy Term & Sum Insured</h3>
+                      </div>
+                      <p class="ins-sec-desc">Validity dates, policyholder details, nominee declarations, and base sum insured limits.</p>
+                      <span class="ins-sec-click-hint">Click to inspect →</span>
+                    </div>
+
+                  </div>
+
+                  <div class="ins-policy-actions-row">
+                    <button type="button" class="btn-ins-primary" id="explainPolicyTermBtn">
+                      <span>Explain a Policy Term</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                    <button type="button" class="btn-ins-secondary" id="askAiPolicyBtn">
+                      <span>Ask Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 7 — AI POLICY EXPLAINER (BEFORE & AFTER)
+                   ========================================================== -->
+              <section class="ins-section" id="policyExplainerSection" aria-labelledby="explainerHeading">
+                <div class="ins-section-header-flex">
+                  <div class="ins-section-title-wrap">
+                    <h2 id="explainerHeading" class="ins-section-title">Turn complex policy language into simple explanations.</h2>
+                    <p class="ins-section-subhead">See how AI translates dense contractual clauses into clear, actionable understanding.</p>
+                  </div>
+                </div>
+
+                <div class="ins-explainer-card">
+                  <div class="ins-explainer-grid">
+                    
+                    <!-- Left: Complex Policy Language -->
+                    <div class="ins-explainer-col ins-explainer-before">
+                      <div class="ins-explainer-badge-row">
+                        <span class="ins-explainer-badge ins-badge-complex">Complex Policy Language</span>
+                        <span class="ins-clause-tag">Clause 14.B (Hospitalization)</span>
+                      </div>
+                      <div class="ins-clause-content-box">
+                        <p class="ins-clause-quote">
+                          “The Underwriter shall indemnify the Insured for Reasonable and Customary Charges incurred during Inpatient Hospitalization exceeding twenty-four (24) continuous hours, subject to the Specified Deductible of ₹10,000 and the Initial 30-Day Moratorium Period, excluding Pre-Existing Ailments until the expiry of twenty-four (24) consecutive months of continuous coverage without interruption.”
+                        </p>
+                      </div>
+                      <div class="ins-clause-meta">
+                        <span>⚠️ High cognitive friction · Jargon heavy</span>
+                      </div>
+                    </div>
+
+                    <!-- Middle AI Bridge Indicator -->
+                    <div class="ins-explainer-bridge" aria-hidden="true">
+                      <div class="ins-ai-pill-icon">✨ AI</div>
+                    </div>
+
+                    <!-- Right: Plain English AI Explanation -->
+                    <div class="ins-explainer-col ins-explainer-after">
+                      <div class="ins-explainer-badge-row">
+                        <span class="ins-explainer-badge ins-badge-simple">Finora AI Plain Explanation</span>
+                        <span class="ins-clause-tag-ai">Easy to Understand</span>
+                      </div>
+                      <div class="ins-explanation-content-box">
+                        <ul class="ins-plain-list">
+                          <li>
+                            <strong>Hospital Stay:</strong> You must be admitted in hospital for at least 24 hours to claim medical costs.
+                          </li>
+                          <li>
+                            <strong>Your Share:</strong> You pay the first ₹10,000 of the total bill out of pocket (deductible). The insurer covers the rest up to your sum insured.
+                          </li>
+                          <li>
+                            <strong>New Illnesses:</strong> Regular sickness claims start after the first 30 days of policy start date (accidents covered from Day 1).
+                          </li>
+                          <li>
+                            <strong>Pre-existing Conditions:</strong> Existing health conditions will only be covered after you hold this policy continuously for 2 years.
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="ins-clause-meta-ai">
+                        <button type="button" class="btn-explainer-ask" data-ask-explainer="Explain clause 14B in more detail">
+                          <span>Ask Finora AI about this</span>
+                          <span aria-hidden="true">→</span>
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 8 — CLAIM JOURNEY (5-STEP PROCESS)
+                   ========================================================== -->
+              <section class="ins-section" id="claimJourneySection" aria-labelledby="claimHeading">
+                <div class="ins-section-header-flex">
+                  <div class="ins-section-title-wrap">
+                    <h2 id="claimHeading" class="ins-section-title">Understand the Claim Journey</h2>
+                    <p class="ins-section-subhead">A clear 5-step overview of what happens when you need to file an insurance claim.</p>
+                  </div>
+                </div>
+
+                <div class="ins-claims-process-grid">
+                  
+                  <!-- Step 01: Report -->
+                  <div class="ins-claim-step-card" data-claim-step="report" tabindex="0" role="button">
+                    <div class="ins-claim-step-num">01</div>
+                    <div class="ins-claim-icon" aria-hidden="true">📞</div>
+                    <h3 class="ins-claim-step-title">Report</h3>
+                    <p class="ins-claim-step-text">Notify the relevant insurer or Third Party Administrator (TPA) through the required helpline, app, or portal.</p>
+                  </div>
+
+                  <!-- Step 02: Submit -->
+                  <div class="ins-claim-step-card" data-claim-step="submit" tabindex="0" role="button">
+                    <div class="ins-claim-step-num">02</div>
+                    <div class="ins-claim-icon" aria-hidden="true">📤</div>
+                    <h3 class="ins-claim-step-title">Submit</h3>
+                    <p class="ins-claim-step-text">Provide the information, bills, discharge summaries, FIR (if vehicle), and documents requested.</p>
+                  </div>
+
+                  <!-- Step 03: Review -->
+                  <div class="ins-claim-step-card" data-claim-step="review" tabindex="0" role="button">
+                    <div class="ins-claim-step-num">03</div>
+                    <div class="ins-claim-icon" aria-hidden="true">🔍</div>
+                    <h3 class="ins-claim-step-title">Review</h3>
+                    <p class="ins-claim-step-text">The insurer assesses the claim according to the terms, policy inclusions, deductibles, and conditions.</p>
+                  </div>
+
+                  <!-- Step 04: Decision -->
+                  <div class="ins-claim-step-card" data-claim-step="decision" tabindex="0" role="button">
+                    <div class="ins-claim-step-num">04</div>
+                    <div class="ins-claim-icon" aria-hidden="true">📋</div>
+                    <h3 class="ins-claim-step-title">Decision</h3>
+                    <p class="ins-claim-step-text">The insurer communicates the claim outcome, approval amount, or any queries in writing.</p>
+                  </div>
+
+                  <!-- Step 05: Follow Up -->
+                  <div class="ins-claim-step-card" data-claim-step="followup" tabindex="0" role="button">
+                    <div class="ins-claim-step-num">05</div>
+                    <div class="ins-claim-icon" aria-hidden="true">🤝</div>
+                    <h3 class="ins-claim-step-title">Follow Up</h3>
+                    <p class="ins-claim-step-text">Understand the next steps, disbursement timeline, or provide any additional information required.</p>
+                  </div>
+
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 9 — DOCUMENT ASSISTANCE / AI SCANNER
+                   ========================================================== -->
+              <section class="ins-doc-assistance-card" id="docAssistanceSection" aria-labelledby="docAssistHeading">
+                <div class="doc-assist-grid">
+                  
+                  <!-- Left Info & Capabilities -->
+                  <div class="doc-assist-info">
+                    <div class="doc-assist-badge">
+                      <span>🤖 AI-POWERED DOCUMENT ASSISTANT</span>
+                    </div>
+                    <h2 id="docAssistHeading" class="doc-assist-title">Have a document you don't understand?</h2>
+                    <p class="doc-assist-desc">
+                      Finora AI can help explain information you provide and highlight sections you may want to review.
+                    </p>
+
+                    <ul class="doc-assist-feature-list">
+                      <li class="doc-assist-feature-item">
+                        <span class="doc-assist-check-icon">✓</span>
+                        <span>Summarise sections and key policy conditions</span>
+                      </li>
+                      <li class="doc-assist-feature-item">
+                        <span class="doc-assist-check-icon">✓</span>
+                        <span>Explain difficult terminology in plain English</span>
+                      </li>
+                      <li class="doc-assist-feature-item">
+                        <span class="doc-assist-check-icon">✓</span>
+                        <span>Identify key policy areas, waiting periods and deductibles</span>
+                      </li>
+                      <li class="doc-assist-feature-item">
+                        <span class="doc-assist-check-icon">✓</span>
+                        <span>Help generate questions to ask the insurer before signing</span>
+                      </li>
+                    </ul>
+
+                    <div class="doc-assist-privacy-note">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                      </svg>
+                      <span>Only upload information you are comfortable processing through this prototype. Finora AI does not store personal financial files.</span>
+                    </div>
+                  </div>
+
+                  <!-- Right Interactive Upload Dropzone UI -->
+                  <div>
+                    <div class="doc-dropzone-box" id="insDocDropzoneBox" role="region" aria-label="Insurance Document Upload Area">
+                      <input type="file" id="insDocFileInput" class="doc-file-input" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" aria-label="Select insurance document to analyze">
+                      
+                      <div class="doc-dropzone-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="17 8 12 3 7 8"></polyline>
+                          <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                      </div>
+
+                      <h3 class="doc-dropzone-title">Drop your document here</h3>
+                      <p class="doc-dropzone-subtitle">or choose a file (PDF, JPG, PNG Max 10MB)</p>
+
+                      <div class="doc-sample-pills">
+                        <span class="doc-sample-label">Try sample policy:</span>
+                        <button type="button" class="doc-sample-btn" data-doc-name="Health_Optima_Schedule.pdf">📄 Sample Health Policy</button>
+                        <button type="button" class="doc-sample-btn" data-doc-name="Motor_Insurance_Schedule.pdf">🚗 Vehicle Cover Note</button>
+                        <button type="button" class="doc-sample-btn" data-doc-name="Term_Life_Policy_Wording.pdf">📝 Term Life Wording</button>
+                      </div>
+                    </div>
+
+                    <!-- AI Document Scan Results (Simulated Prototype) -->
+                    <div class="doc-scan-results-box" id="insDocScanResultsBox" aria-live="polite">
+                      <div class="doc-scan-header">
+                        <span class="doc-scan-title">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                          </svg>
+                          <span id="insScanDocName">Document_Analysis.pdf</span>
+                        </span>
+                        <span class="doc-scan-badge">AI Analyzed</span>
+                      </div>
+                      <p class="doc-scan-item" id="insScanSummary">Summary will appear here...</p>
+                      <div id="insScanClauses"></div>
+                      <div id="insScanQuestions"></div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 10 — INSURANCE KNOWLEDGE CARDS
+                   ========================================================== -->
+              <section class="ins-section" id="knowledgeSection" aria-labelledby="knowledgeHeading">
+                <div class="ins-section-header-flex">
+                  <div class="ins-section-title-wrap">
+                    <h2 id="knowledgeHeading" class="ins-section-title">Build Your Insurance Knowledge</h2>
+                    <p class="ins-section-subhead">Curated educational cards to strengthen your financial awareness.</p>
+                  </div>
+                </div>
+
+                <div class="ins-knowledge-grid">
+                  
+                  <!-- Card 1: Insurance Basics -->
+                  <article class="ins-knowledge-card" data-knowledge-topic="basics" tabindex="0" role="button">
+                    <div class="ins-knowledge-icon-wrap" aria-hidden="true">🌱</div>
+                    <h3 class="ins-knowledge-title">Insurance Basics</h3>
+                    <p class="ins-knowledge-desc">How risk pooling works and why insurance forms the foundational shield of any financial plan.</p>
+                    <span class="ins-knowledge-link">
+                      <span>Learn More</span>
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </article>
+
+                  <!-- Card 2: Understanding Coverage -->
+                  <article class="ins-knowledge-card" data-knowledge-topic="coverage" tabindex="0" role="button">
+                    <div class="ins-knowledge-icon-wrap" aria-hidden="true">🛡️</div>
+                    <h3 class="ins-knowledge-title">Understanding Coverage</h3>
+                    <p class="ins-knowledge-desc">Differentiate between base sum insured, super top-up plans, riders, and restoration benefits.</p>
+                    <span class="ins-knowledge-link">
+                      <span>Learn More</span>
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </article>
+
+                  <!-- Card 3: Policy vs Premium -->
+                  <article class="ins-knowledge-card" data-knowledge-topic="policy_vs_premium" tabindex="0" role="button">
+                    <div class="ins-knowledge-icon-wrap" aria-hidden="true">⚖️</div>
+                    <h3 class="ins-knowledge-title">Policy vs Premium</h3>
+                    <p class="ins-knowledge-desc">Understand how premium amounts are calculated based on age, lifestyle, location, and term.</p>
+                    <span class="ins-knowledge-link">
+                      <span>Learn More</span>
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </article>
+
+                  <!-- Card 4: Claims Explained -->
+                  <article class="ins-knowledge-card" data-knowledge-topic="claims" tabindex="0" role="button">
+                    <div class="ins-knowledge-icon-wrap" aria-hidden="true">🏥</div>
+                    <h3 class="ins-knowledge-title">Claims Explained</h3>
+                    <p class="ins-knowledge-desc">Cashless hospitalisation vs reimbursement claims: required paperwork, approvals, and timelines.</p>
+                    <span class="ins-knowledge-link">
+                      <span>Learn More</span>
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </article>
+
+                  <!-- Card 5: Common Insurance Terms -->
+                  <article class="ins-knowledge-card" data-knowledge-topic="terms" tabindex="0" role="button">
+                    <div class="ins-knowledge-icon-wrap" aria-hidden="true">📖</div>
+                    <h3 class="ins-knowledge-title">Common Insurance Terms</h3>
+                    <p class="ins-knowledge-desc">Master critical jargon: Co-payment, Deductibles, Sub-limits, Room Rent Caps, and NCB.</p>
+                    <span class="ins-knowledge-link">
+                      <span>Learn More</span>
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </article>
+
+                  <!-- Card 6: Questions to Ask Before Choosing -->
+                  <article class="ins-knowledge-card" data-knowledge-topic="questions" tabindex="0" role="button">
+                    <div class="ins-knowledge-icon-wrap" aria-hidden="true">❓</div>
+                    <h3 class="ins-knowledge-title">Questions to Ask Before Choosing</h3>
+                    <p class="ins-knowledge-desc">Essential checklist of questions to ask authorised insurance representatives before deciding.</p>
+                    <span class="ins-knowledge-link">
+                      <span>Learn More</span>
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </article>
+
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 11 & 12 — NEED HELP CTA & RESPONSIBLE AI
+                   ========================================================== -->
+              <section class="ins-cta-banner-card" aria-labelledby="helpHeading">
+                <div class="ins-cta-banner-glow" aria-hidden="true"></div>
+                <div class="ins-cta-banner-content">
+                  <span class="ins-cta-banner-pill">Ready to Navigate?</span>
+                  <h2 id="helpHeading" class="ins-cta-banner-title">Not sure where to start?</h2>
+                  <p class="ins-cta-banner-desc">
+                    Tell Finora AI what you're trying to understand, and we'll guide you through the relevant insurance journey.
+                  </p>
+                  <div class="ins-cta-banner-actions">
+                    <a href="ai-assistant.html" class="btn btn-primary btn-hero-glow">
+                      <span>Talk to Finora AI</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                    <a href="knowledge-hub.html" class="btn btn-outline-white">
+                      <span>Explore Knowledge Hub</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
+              </section>
+
+              <!-- SECTION 12: RESPONSIBLE AI -->
+              <section class="ins-responsible-ai-card" aria-labelledby="responsibleHeading">
+                <div class="ins-responsible-header">
+                  <div class="ins-responsible-icon-wrap" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 id="responsibleHeading" class="ins-responsible-title">AI that explains. You decide.</h2>
+                    <p class="ins-responsible-subtitle">Finora's commitments to transparent, ethical, and user-empowered guidance.</p>
+                  </div>
+                </div>
+
+                <div class="ins-principles-grid">
+                  
+                  <div class="ins-principle-item">
+                    <div class="ins-principle-dot" aria-hidden="true"></div>
+                    <h3 class="ins-principle-name">Clear Information</h3>
+                    <p class="ins-principle-desc">Understand the information before taking action.</p>
+                  </div>
+
+                  <div class="ins-principle-item">
+                    <div class="ins-principle-dot" aria-hidden="true"></div>
+                    <h3 class="ins-principle-name">Transparency</h3>
+                    <p class="ins-principle-desc">Know when you're receiving general guidance.</p>
+                  </div>
+
+                  <div class="ins-principle-item">
+                    <div class="ins-principle-dot" aria-hidden="true"></div>
+                    <h3 class="ins-principle-name">User Control</h3>
+                    <p class="ins-principle-desc">You remain in control of your financial decisions.</p>
+                  </div>
+
+                  <div class="ins-principle-item">
+                    <div class="ins-principle-dot" aria-hidden="true"></div>
+                    <h3 class="ins-principle-name">Responsible AI</h3>
+                    <p class="ins-principle-desc">AI does not replace decisions made by authorised financial institutions.</p>
+                  </div>
+
+                </div>
+              </section>
+
+              <!-- SECTION 13: IMPORTANT INFORMATION -->
+              <div class="ins-important-note-card" role="note">
+                <div class="ins-note-icon-wrap" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </div>
+                <div class="ins-note-content">
+                  <h3 class="ins-note-title">Important Note</h3>
+                  <p class="ins-note-text">
+                    Finora is a hackathon prototype providing general educational information and journey guidance. Insurance products, coverage, exclusions, premiums, eligibility and claim decisions vary by policy and insurer. Always review the relevant policy information and consult the authorised insurer for specific details.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ==========================================================
+                 RIGHT STICKY SIDEBAR (FINORA AI + CTA + DISCLAIMER)
+                 ========================================================== -->
+            <aside class="ins-side-column" aria-label="Finora AI Insurance Companion">
+              
+              <!-- CARD 1: FINORA AI CONVERSATIONAL COMPANION -->
+              <div class="ins-ai-card" role="region" aria-label="Finora AI Assistant">
+                <div class="ins-ai-card-header">
+                  <div class="ins-ai-header-brand">
+                    <div class="ins-ai-sparkle-wrap" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                      </svg>
+                    </div>
+                    <div class="ins-ai-title-wrap">
+                      <span class="ins-ai-title">Finora AI</span>
+                      <span class="ins-ai-subtitle">Your insurance journey companion</span>
+                    </div>
+                  </div>
+                  <div class="ins-ai-status-pill">
+                    <span class="ins-ai-status-dot" aria-hidden="true"></span>
+                    <span>Online</span>
+                  </div>
+                </div>
+
+                <!-- Live Chat Dialogue Stream -->
+                <div class="ins-ai-chat-body" id="insAiChatBody">
+                  <div class="ai-bubble-msg">
+                    <div class="ai-bubble-avatar">🤖</div>
+                    <div class="ai-bubble-content">
+                      Hi! I'm Finora AI 👋 I can help you understand insurance concepts, explain policy terminology and guide you through the insurance journey.<br><br>
+                      What would you like to know?
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="ins-ai-chips-area">
+                  <span class="ins-ai-chips-label">Quick Actions:</span>
+                  <div class="ins-ai-chips-group">
+                    <button type="button" class="ai-quick-chip-btn" data-intent="What is insurance?">
+                      <span>What is insurance?</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                    <button type="button" class="ai-quick-chip-btn" data-intent="Explain premium">
+                      <span>Explain premium</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                    <button type="button" class="ai-quick-chip-btn" data-intent="What does coverage mean?">
+                      <span>What does coverage mean?</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                    <button type="button" class="ai-quick-chip-btn" data-intent="What is an exclusion?">
+                      <span>What is an exclusion?</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                    <button type="button" class="ai-quick-chip-btn" data-intent="How does a claim work?">
+                      <span>How does a claim work?</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                    <button type="button" class="ai-quick-chip-btn" data-intent="Explain this policy term">
+                      <span>Explain this policy term</span>
+                      <span aria-hidden="true">💬</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Chat Input Form -->
+                <form class="ins-ai-input-form" id="insAiForm">
+                  <input type="text" id="insAiInput" class="ins-ai-text-input" placeholder="Ask Finora AI..." aria-label="Type message for Finora AI">
+                  <button type="submit" class="btn-ai-send" aria-label="Send message">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </button>
+                </form>
+
+                <!-- Disclaimer -->
+                <div class="ins-ai-disclaimer-text">
+                  Finora AI provides general educational guidance. Insurance coverage, exclusions, premiums, eligibility and claim decisions depend on the specific policy and authorised insurer.
+                </div>
+              </div>
+
+              <!-- CARD 2: UNDERSTAND YOUR POLICY QUICK CARD -->
+              <div class="ins-side-policy-card">
+                <div class="ins-side-policy-header">
+                  <div class="ins-side-policy-icon" aria-hidden="true">📑</div>
+                  <div>
+                    <h3 class="ins-side-policy-title">Understand Your Policy</h3>
+                    <p class="ins-side-policy-desc">Upload your policy document and let Finora AI explain key sections in simple language.</p>
+                  </div>
+                </div>
+
+                <div class="ins-side-upload-area" id="sideUploadTrigger" role="button" tabindex="0">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
+                  <span class="ins-side-upload-text">Drop your document here or <strong>choose a file</strong></span>
+                  <span class="ins-side-upload-sub">PDF, JPG, PNG (Max 10MB)</span>
+                </div>
+
+                <ul class="ins-side-checklist">
+                  <li><span class="check-dot">✓</span> Summarise important sections</li>
+                  <li><span class="check-dot">✓</span> Explain difficult terminology</li>
+                  <li><span class="check-dot">✓</span> Highlight key policy information</li>
+                  <li><span class="check-dot">✓</span> Help generate questions to ask</li>
+                </ul>
+              </div>
+
+              <!-- CARD 3: NEED HELP CHOOSING? CTA CARD -->
+              <div class="ins-cta-card">
+                <div class="ins-cta-top">
+                  <div class="ins-cta-icon-wrap" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="ins-cta-title">Not sure where to start?</h3>
+                </div>
+                <p class="ins-cta-desc">
+                  Tell Finora AI what you want to protect and let the guided journey help you.
+                </p>
+                <a href="ai-assistant.html" class="btn-cta-full">
+                  <span>Talk to Finora AI</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+                <div class="ins-cta-badge-footer">
+                  <span>🛡️ Peace of mind, made simple.</span>
+                </div>
+              </div>
+
+            </aside>
+
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <!-- ====================================================================
+         GLOBAL FOOTER (MATCHING DESIGN SYSTEM)
+         ==================================================================== -->
+    <footer class="site-footer" id="about" role="contentinfo">
+      <div class="footer-inner">
+        
+        <div class="footer-top-grid">
+          
+          <!-- Column 1: Brand -->
+          <div class="footer-brand-column">
+            <span class="footer-brand-title">Finora</span>
+            <span class="footer-brand-tagline">Simpler Journeys. Brighter Futures.</span>
+            <p class="footer-brand-mission">
+              Leveraging intelligent AI to make financial journeys across lending, insurance, and digital services simpler, faster, and more human.
+            </p>
+          </div>
+
+          <!-- Column 2: Platform -->
+          <div>
+            <h3 class="footer-column-title">Platform</h3>
+            <ul class="footer-links-list">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="loans.html" class="footer-link">Loans</a></li>
+              <li><a href="insurance.html" class="footer-link">Insurance</a></li>
+              <li><a href="fintech.html" class="footer-link">Fintech</a></li>
+              <li><a href="ai-assistant.html" class="footer-link">AI Assistant</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Resources -->
+          <div>
+            <h3 class="footer-column-title">Resources</h3>
+            <ul class="footer-links-list">
+              <li><a href="my-journey.html" class="footer-link">My Journey</a></li>
+              <li><a href="knowledge-hub.html" class="footer-link">Knowledge Hub</a></li>
+              <li><a href="knowledge-hub.html#basics" class="footer-link">Financial Basics</a></li>
+              <li><a href="knowledge-hub.html#faqs" class="footer-link">FAQs</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Company -->
+          <div>
+            <h3 class="footer-column-title">Company</h3>
+            <ul class="footer-links-list">
+              <li><a href="#about" class="footer-link">About</a></li>
+              <li><a href="#contact" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 5: Legal -->
+          <div>
+            <h3 class="footer-column-title">Legal</h3>
+            <ul class="footer-links-list">
+              <li><a href="#privacy" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#terms" class="footer-link">Terms of Service</a></li>
+              <li><a href="#trust" class="footer-link">Responsible AI</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Copyright & Prototype Disclaimer -->
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            © 2026 Finora — Hackathon Prototype
+          </p>
+          
+          <div class="footer-prototype-tag">
+            <span class="prototype-pulse-dot" aria-hidden="true"></span>
+            <span>National Hackathon Prototype — For Demonstration Purposes</span>
+          </div>
+
+          <div class="footer-social-links" aria-label="Social links">
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter / X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- ====================================================================
+         MOBILE BOTTOM NAVIGATION DOCK
+         ==================================================================== -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile Quick Navigation">
+      <a href="index.html" class="mobile-bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>Home</span>
+      </a>
+
+      <a href="loans.html" class="mobile-bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="21" x2="21" y2="21"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+          <polyline points="5 6 12 3 19 6"></polyline>
+          <line x1="6" y1="10" x2="6" y2="21"></line>
+          <line x1="10" y1="10" x2="10" y2="21"></line>
+          <line x1="14" y1="10" x2="14" y2="21"></line>
+          <line x1="18" y1="10" x2="18" y2="21"></line>
+        </svg>
+        <span>Loans</span>
+      </a>
+
+      <a href="ai-assistant.html" class="mobile-bottom-nav-item center-ai-btn" aria-label="Finora AI Assistant">
+        <div class="ai-nav-bubble">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+          </svg>
+        </div>
+        <span>AI Guide</span>
+      </a>
+
+      <a href="insurance.html" class="mobile-bottom-nav-item active" aria-current="page">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>Insurance</span>
+      </a>
+
+      <a href="fintech.html" class="mobile-bottom-nav-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+          <line x1="2" y1="10" x2="22" y2="10"></line>
+        </svg>
+        <span>Fintech</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- ====================================================================
+       INTERACTIVE MODALS
+       ==================================================================== -->
+
+  <!-- MODAL 1: TERMINOLOGY EXPLANATION DEEP DIVE -->
+  <div class="ins-modal-overlay" id="modalTermDetail" role="dialog" aria-modal="true" aria-labelledby="termModalTitle">
+    <div class="ins-modal-card">
+      <div class="ins-modal-header">
+        <div class="ins-modal-title-group">
+          <div class="ins-modal-icon-pill" id="termModalIcon" aria-hidden="true">📖</div>
+          <div>
+            <h3 class="ins-modal-title" id="termModalTitle">Insurance Terminology</h3>
+            <p class="ins-modal-subhead">Simple explanation & practical examples</p>
+          </div>
+        </div>
+        <button type="button" class="ins-modal-close-btn" id="closeTermModal" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="ins-modal-body">
+        <div class="ins-modal-definition-box">
+          <h4 class="ins-modal-section-title">Plain English Definition</h4>
+          <p class="ins-modal-desc-text" id="termModalDefinition"></p>
+        </div>
+
+        <div class="ins-modal-example-box">
+          <h4 class="ins-modal-section-title">Practical Rupee (₹) Example</h4>
+          <p class="ins-modal-desc-text" id="termModalExample"></p>
+        </div>
+
+        <div class="ins-modal-tip-box">
+          <h4 class="ins-modal-section-title">What You Should Watch Out For</h4>
+          <p class="ins-modal-desc-text" id="termModalWatchout"></p>
+        </div>
+
+        <button type="button" class="btn-cta-full" id="termAskAiBtn">
+          <span>Ask Finora AI about this term</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: INSURANCE CATEGORY DEEP DIVE (HEALTH, LIFE, VEHICLE, HOME) -->
+  <div class="ins-modal-overlay" id="modalInsDetail" role="dialog" aria-modal="true" aria-labelledby="insDetailModalTitle">
+    <div class="ins-modal-card">
+      <div class="ins-modal-header">
+        <div class="ins-modal-title-group">
+          <div class="ins-modal-icon-pill" id="insCategoryModalIcon" aria-hidden="true">🛡️</div>
+          <div>
+            <h3 class="ins-modal-title" id="insDetailModalTitle">Insurance Category</h3>
+            <p class="ins-modal-subhead" id="insDetailModalSubtitle">Understand key concepts and typical requirements</p>
+          </div>
+        </div>
+        <button type="button" class="ins-modal-close-btn" id="closeInsCategoryModal" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="ins-modal-body">
+        <div>
+          <h4 class="ins-modal-section-title">What is Typically Covered</h4>
+          <ul class="ins-modal-list" id="insModalCoveredList"></ul>
+        </div>
+
+        <div>
+          <h4 class="ins-modal-section-title">Common Exclusions & Conditions</h4>
+          <ul class="ins-modal-list" id="insModalExclusionsList"></ul>
+        </div>
+
+        <div>
+          <h4 class="ins-modal-section-title">Typical Documentation & Requirements</h4>
+          <ul class="ins-modal-list" id="insModalDocsList"></ul>
+        </div>
+
+        <button type="button" class="btn-cta-full" id="insCategoryAskAiBtn">
+          <span>Ask Finora AI about this insurance</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/insurance.js"></script>
+</body>
+</html>

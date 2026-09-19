@@ -746,3 +746,105 @@
     font-size: 1.4375rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   6. HOME PAGE DASHBOARD BREAKPOINTS (MATCHING FINORA DESIGN SYSTEM)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .home-layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-side-column {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .home-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero-visual-wrapper {
+    order: -1;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .home-solutions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-journey-timeline {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .home-journey-step {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    padding: 14px 16px;
+  }
+
+  .home-step-icon-wrap {
+    flex-shrink: 0;
+  }
+
+  .home-step-detail-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-home-action {
+    width: 100%;
+  }
+
+  .home-hero-card {
+    padding: 24px 20px;
+  }
+
+  .home-hero-heading {
+    font-size: 1.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero-btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-home-primary,
+  .btn-home-secondary {
+    width: 100%;
+  }
+
+  .home-cta-banner-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-outline-white {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

@@ -112,7 +112,7 @@ const AI_LOAN_KNOWLEDGE = {
     chip: "Open EMI Calculator"
   },
   "what documents are required?": {
-    text: "While exact requirements vary by lender, standard documentation commonly includes:\n\n1. **Proof of Identity**: Passport, Driver's License, or National ID.\n2. **Proof of Address**: Utility bills or rental agreements.\n3. **Income Proof**: Recent salary slips or bank statements (usually 3–6 months).\n4. **Tax Documents**: W-2, Form 16, or tax returns for self-employed individuals.\n\nWould you like to review the complete checklist?",
+    text: "While exact requirements vary by lender, standard Indian documentation commonly includes:\n\n1. **Proof of Identity & KYC**: PAN Card (mandatory), Aadhaar Card, or Passport.\n2. **Proof of Address**: Aadhaar Card, recent utility bills, or registered rent agreement.\n3. **Income Proof**: Recent salary slips (last 3–6 months) or bank account statements.\n4. **Tax Documents**: Form 16 or ITR (Income Tax Returns) for self-employed individuals.\n\nWould you like to review the complete checklist?",
     chip: "View Document Checklist"
   },
   "explain interest": {
@@ -341,13 +341,13 @@ const LOAN_DETAILS_DATA = {
     title: "Personal Loan Journey",
     subtitle: "Flexible, uncollateralized financing for planned or emergency needs.",
     keyFeatures: [
-      "**No Collateral Required**: Unsecured loan assessed on income and credit score.",
+      "**No Collateral Required**: Unsecured loan assessed on income and CIBIL / credit score.",
       "**Flexible Tenure**: Typically 1 to 5 years depending on repayment preference.",
       "**Quick Processing**: Often processed faster due to minimal physical asset verification.",
       "**Multipurpose Use**: Suitable for medical expenses, home improvements, or consolidation."
     ],
-    commonDocs: ["Identity Proof (ID/Passport)", "Address Proof", "3 Months Salary Slips", "6 Months Bank Statements"],
-    factors: ["Credit Score (typically 650+ preferred)", "Employment Stability", "Debt-to-Income (DTI) under 40-50%"],
+    commonDocs: ["PAN Card & Aadhaar / Identity Proof", "Current Address Proof", "Last 3 Months Salary Slips", "Last 6 Months Bank Statements"],
+    factors: ["CIBIL / Credit Score (typically 700+ preferred)", "Employment Stability", "Debt-to-Income / FOIR under 40-50%"],
     disclaimer: "Finora provides general guidance. Interest rates and approval terms depend on authorized lending institutions."
   },
   home: {
@@ -359,7 +359,7 @@ const LOAN_DETAILS_DATA = {
       "**Lower Interest Rates**: Secured nature usually enables competitive rate structures.",
       "**Down Payment (LTV)**: Lenders usually finance 75%–85% of the registered property value."
     ],
-    commonDocs: ["Identity & Address Proof", "Property Title Deeds & Sale Agreement", "Approved Building Plan", "2 Years Tax Returns"],
+    commonDocs: ["PAN Card & Aadhaar Proof", "Property Sale Agreement, Title Deeds & NOC", "Approved Building Plan & Encumbrance Certificate (EC)", "2–3 Years ITR / Form 16"],
     factors: ["Property Valuation & Legal Clearance", "Stable Long-term Income", "Co-applicant Eligibility Options"],
     disclaimer: "Finora provides educational guidance. Property legal validation must be completed by official lender experts."
   },
@@ -369,11 +369,11 @@ const LOAN_DETAILS_DATA = {
     keyFeatures: [
       "**Comprehensive Coverage**: Includes course fees, accommodation, exam fees, and travel.",
       "**Moratorium Period**: Repayment typically commences 6–12 months after course completion.",
-      "**Tax Benefits**: Often eligible for interest deductions under tax guidelines.",
+      "**Tax Benefits**: Often eligible for interest deductions under Section 80E of Income Tax Act.",
       "**Co-borrower Support**: Parents or guardians typically act as primary co-applicants."
     ],
-    commonDocs: ["Admission Letter from Accredited Institution", "Fee Structure Breakdown", "Academic Records / Marksheets", "Co-applicant Income Proof"],
-    factors: ["Accreditation of Institution & Course", "Co-borrower Credit Profile", "Future Employability Assessment"],
+    commonDocs: ["Admission Letter from Accredited Institution", "Detailed Fee Structure Breakdown", "Academic Records / Marksheets", "Co-applicant PAN, Aadhaar & Income Proof"],
+    factors: ["Accreditation of Institution & Course", "Co-borrower CIBIL Profile", "Future Employability Assessment"],
     disclaimer: "Finora provides conceptual information. Scholarship and institutional criteria vary widely."
   },
   car: {
@@ -383,10 +383,10 @@ const LOAN_DETAILS_DATA = {
       "**Vehicle as Security**: The purchased vehicle is hypothecated until the loan is fully repaid.",
       "**Tenure Flexibility**: Typical tenure ranges between 3 and 7 years.",
       "**Fixed Interest Norm**: Most auto loans feature fixed monthly EMIs.",
-      "**On-Road vs Ex-Showroom**: Confirm whether financing covers road tax and registration."
+      "**On-Road vs Ex-Showroom**: Confirm whether financing covers road tax, insurance, and registration."
     ],
-    commonDocs: ["Identity & Address Proof", "Vehicle Proforma Invoice / Dealer Quote", "Income Statements (3–6 Months)", "Driving License"],
-    factors: ["Vehicle Valuation", "Credit Rating", "Down Payment Amount (10–20% common)"],
+    commonDocs: ["PAN Card & Aadhaar / Identity Proof", "Vehicle Proforma Invoice / Dealer Quotation", "Income Statements (3–6 Months Salary Slips / ITR)", "Driving License"],
+    factors: ["Vehicle Valuation & On-Road Price", "CIBIL / Credit Rating", "Down Payment Amount (10–20% common)"],
     disclaimer: "Finora is a hackathon prototype. Car dealer tie-ups and rates are determined by authorized lenders."
   }
 };
@@ -583,6 +583,22 @@ function initEMICalculator() {
 
   if (!amountSlider || !rateSlider || !tenureSlider) return;
 
+  function formatINR(val) {
+    return '₹' + Math.round(val).toLocaleString('en-IN');
+  }
+
+  function formatIndianLakhs(num) {
+    const formatted = Math.round(num).toLocaleString('en-IN');
+    if (num >= 10000000) {
+      const cr = (num / 10000000).toFixed(num % 10000000 === 0 ? 0 : 2);
+      return `₹${formatted} (${cr} Cr)`;
+    } else if (num >= 100000) {
+      const lakh = (num / 100000).toFixed(num % 100000 === 0 ? 0 : 2);
+      return `₹${formatted} (${lakh} Lakh${lakh === '1' ? '' : 's'})`;
+    }
+    return `₹${formatted}`;
+  }
+
   function calculate() {
     const P = parseFloat(amountSlider.value);
     const annualRate = parseFloat(rateSlider.value);
@@ -605,14 +621,14 @@ function initEMICalculator() {
     const totalInterest = totalPayment - P;
 
     // Update displays
-    if (amountVal) amountVal.textContent = `$${P.toLocaleString()}`;
+    if (amountVal) amountVal.textContent = formatIndianLakhs(P);
     if (rateVal) rateVal.textContent = `${annualRate.toFixed(1)}%`;
     if (tenureVal) tenureVal.textContent = `${tenureYears} ${tenureYears === 1 ? 'Year' : 'Years'}`;
 
-    if (displayEmi) displayEmi.textContent = `$${Math.round(emi).toLocaleString()}/mo`;
-    if (displayPrincipal) displayPrincipal.textContent = `$${Math.round(P).toLocaleString()}`;
-    if (displayInterest) displayInterest.textContent = `$${Math.round(totalInterest).toLocaleString()}`;
-    if (displayTotal) displayTotal.textContent = `$${Math.round(totalPayment).toLocaleString()}`;
+    if (displayEmi) displayEmi.textContent = `${formatINR(emi)}/mo`;
+    if (displayPrincipal) displayPrincipal.textContent = formatINR(P);
+    if (displayInterest) displayInterest.textContent = formatINR(totalInterest);
+    if (displayTotal) displayTotal.textContent = formatINR(totalPayment);
   }
 
   amountSlider.addEventListener('input', calculate);
@@ -694,27 +710,27 @@ function simulateDocScan(docName) {
       if (scanSummary) scanSummary.textContent = `Loan Sanction Letter identified for ${docName}. Demonstrates formal pre-approval with conditional terms.`;
       if (scanClauses) scanClauses.innerHTML = `
         <div class="doc-scan-item">✓ <strong>Interest Rate Clause:</strong> Fixed at 8.5% p.a. for first 24 months, subject to benchmark revision thereafter.</div>
-        <div class="doc-scan-item">✓ <strong>Prepayment Terms:</strong> Zero foreclosure penalty on floating rate loans after 12 active EMIs.</div>
-        <div class="doc-scan-item">✓ <strong>Processing Fee:</strong> 0.5% + statutory taxes deductible at disbursement.</div>
+        <div class="doc-scan-item">✓ <strong>Prepayment Terms:</strong> Zero foreclosure penalty on floating rate loans as per RBI regulations.</div>
+        <div class="doc-scan-item">✓ <strong>Processing Fee:</strong> 0.5% + applicable GST deductible at disbursement.</div>
       `;
       if (scanTerms) scanTerms.innerHTML = `
-        <div class="doc-scan-item">💡 <strong>Hypothecation:</strong> Vehicle/Asset remains pledged to the bank until full clearance.</div>
-        <div class="doc-scan-item">💡 <strong>Moratorium:</strong> A grace period where principal payments are deferred.</div>
+        <div class="doc-scan-item">💡 <strong>Hypothecation:</strong> Vehicle/Asset remains pledged to the bank until full clearance and NOC issuance.</div>
+        <div class="doc-scan-item">💡 <strong>Moratorium:</strong> A grace period where principal payments are deferred (common in education loans).</div>
       `;
     } else if (docName.toLowerCase().includes('salary') || docName.toLowerCase().includes('slip') || docName.toLowerCase().includes('income')) {
-      if (scanSummary) scanSummary.textContent = `Income Statement identified for ${docName}. Shows regular net monthly cash flow.`;
+      if (scanSummary) scanSummary.textContent = `Salary / Income Statement identified for ${docName}. Shows regular net monthly cash flow.`;
       if (scanClauses) scanClauses.innerHTML = `
-        <div class="doc-scan-item">✓ <strong>Gross vs Net Pay:</strong> Lenders typically compute repayment eligibility on Net In-Hand Income.</div>
-        <div class="doc-scan-item">✓ <strong>Statutory Deductions:</strong> Tax withholdings and retirement contributions verified.</div>
+        <div class="doc-scan-item">✓ <strong>Gross vs Net In-Hand Pay:</strong> Indian lenders compute repayment eligibility (FOIR) on Net In-Hand Income.</div>
+        <div class="doc-scan-item">✓ <strong>Statutory Deductions:</strong> PF (Provident Fund), Professional Tax & TDS (Tax Deducted at Source) verified.</div>
       `;
       if (scanTerms) scanTerms.innerHTML = `
-        <div class="doc-scan-item">💡 <strong>DTI (Debt-to-Income):</strong> Percentage of monthly earnings dedicated to recurring debt obligations.</div>
+        <div class="doc-scan-item">💡 <strong>FOIR (Fixed Obligation to Income Ratio):</strong> Percentage of monthly earnings dedicated to recurring debt obligations (ideal < 40–50%).</div>
       `;
     } else {
       if (scanSummary) scanSummary.textContent = `Standard Financial Document analyzed: ${docName}. All key obligations highlighted.`;
       if (scanClauses) scanClauses.innerHTML = `
-        <div class="doc-scan-item">✓ <strong>Repayment Obligation:</strong> Monthly debit on specified due date. Late charges apply past 5 days grace.</div>
-        <div class="doc-scan-item">✓ <strong>Default Notice Period:</strong> 30-day written communication before adverse credit bureau reporting.</div>
+        <div class="doc-scan-item">✓ <strong>Repayment Obligation:</strong> Monthly NACH / e-Mandate auto-debit on specified due date.</div>
+        <div class="doc-scan-item">✓ <strong>Default Notice Period:</strong> 30-day written communication before adverse CIBIL / bureau reporting.</div>
       `;
       if (scanTerms) scanTerms.innerHTML = `
         <div class="doc-scan-item">💡 <strong>Amortization Schedule:</strong> Complete periodic timetable showing principal and interest split.</div>

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Finora — AI-Powered Financial Journeys. Simpler Journeys. Brighter Futures. Making Loans, Insurance, and Fintech journeys simpler, faster, and more human.">
+  <meta name="description" content="Finora — AI-Powered Financial Journeys. Simpler Journeys. Brighter Futures. Making Loans, Insurance, and Fintech journeys simpler, faster, and more human with AI guidance.">
   <meta name="theme-color" content="#0b1329">
-  <title>Finora — AI-Powered Financial Journeys</title>
+  <title>Finora — AI-Powered Financial Journeys | Simpler Journeys. Brighter Futures.</title>
   
   <!-- Core & Responsive Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
@@ -62,8 +62,8 @@
                 <circle cx="9" cy="9" r="6"></circle>
                 <line x1="18" y1="18" x2="13.5" y2="13.5"></line>
               </svg>
-              <input type="search" id="globalSearchInput" class="search-input" placeholder="Search financial topics..." aria-label="Search financial topics">
-              <span class="search-shortcut" aria-hidden="true">Ctrl K</span>
+              <input type="search" id="globalSearchInput" class="search-input" placeholder="Search financial topics, products, or your questions..." aria-label="Search financial topics">
+              <span class="search-shortcut" aria-hidden="true">⌘K</span>
             </div>
           </div>
 
@@ -80,7 +80,7 @@
           <div class="user-profile-badge" id="userProfileBadge" role="button" tabindex="0" aria-label="User Profile Brightlin">
             <div class="avatar-circle" aria-hidden="true">BB</div>
             <div class="user-details">
-              <span class="user-greeting">Welcome</span>
+              <span class="user-greeting">Welcome,</span>
               <span class="user-name">Brightlin</span>
             </div>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -145,7 +145,7 @@
       </div>
 
       <nav class="mobile-drawer-nav">
-        <a href="index.html" class="mobile-nav-link active">
+        <a href="index.html" class="mobile-nav-link active" aria-current="page">
           <span>🏠</span>
           <span>Home</span>
         </a>
@@ -184,11 +184,11 @@
     </div>
 
     <!-- ====================================================================
-         APP BODY LAYOUT: SIDEBAR + MAIN CONTENT
+         APP BODY LAYOUT: PERSISTENT SIDEBAR + 2-COLUMN MAIN CONTENT
          ==================================================================== -->
     <div class="app-body">
 
-      <!-- SECONDARY DESKTOP SIDEBAR -->
+      <!-- LEFT SIDEBAR -->
       <aside class="sidebar" aria-label="Journey Sidebar Navigation">
         <nav class="sidebar-nav">
           
@@ -253,9 +253,14 @@
         </nav>
 
         <!-- Sidebar Inspiration Quote Card -->
-        <div class="sidebar-quote-card">
-          <p class="sidebar-quote-text">“Finance should empower people, not confuse them.”</p>
-          <p class="sidebar-quote-subtext">Build a more inclusive financial future.</p>
+        <div class="sidebar-quote-card home-sidebar-quote">
+          <p class="sidebar-quote-text">“Better financial decisions start with better understanding.”</p>
+          <div class="sidebar-brand-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 28C17.5228 28 22 23.5228 22 18C22 12.4772 17.5228 8 12 8C6.47715 8 2 12.4772 2 18C2 23.5228 6.47715 28 12 28Z" fill="#2563EB"/>
+            </svg>
+            <span>Finora</span>
+          </div>
         </div>
       </aside>
 
@@ -264,728 +269,513 @@
            ================================================================== -->
       <main class="main-content" id="mainContent" role="main">
 
-        <!-- ================================================================
-             SECTION 1 — HERO SECTION
-             ================================================================ -->
-        <section class="hero-section" aria-labelledby="heroHeading">
-          <div class="hero-bg-glow" aria-hidden="true"></div>
-          <div class="hero-grid-pattern" aria-hidden="true"></div>
-
-          <div class="hero-content-grid">
+        <div class="home-page-container">
+          
+          <!-- 2-COLUMN DASHBOARD GRID: MAIN CONTENT + RIGHT STICKY AI COMPANION -->
+          <div class="home-layout-grid">
             
-            <!-- Hero Left Text & Actions -->
-            <div class="hero-left">
-              <div class="eyebrow-pill pill-dark">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                </svg>
-                AI-POWERED FINANCIAL JOURNEYS
-              </div>
+            <!-- LEFT MAIN CONTENT COLUMN -->
+            <div class="home-main-column">
+              
+              <!-- ==========================================================
+                   SECTION 1 — HERO SECTION
+                   ========================================================== -->
+              <section class="home-hero-card" aria-labelledby="homeHeroHeading">
+                <div class="home-hero-glow-accent" aria-hidden="true"></div>
 
-              <h1 id="heroHeading" class="hero-heading">
-                Your Financial Goals,<br>
-                <span class="hero-accent-text">Powered by AI Guidance.</span>
-              </h1>
+                <div class="home-hero-grid">
+                  
+                  <!-- Left Text & Actions -->
+                  <div class="home-hero-content">
+                    <div class="home-hero-eyebrow">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                      </svg>
+                      <span>AI-POWERED FINANCIAL JOURNEYS</span>
+                    </div>
 
-              <p class="hero-description">
-                Explore, understand and navigate financial services through a simpler, more guided experience — all in one place.
-              </p>
+                    <h1 id="homeHeroHeading" class="home-hero-heading">
+                      Your financial journey, <span class="home-heading-highlight">simplified.</span>
+                    </h1>
 
-              <div class="hero-actions">
-                <a href="ai-assistant.html" class="btn btn-hero-glow">
-                  <span>Start Your Journey</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-                <a href="#how-it-works" class="btn btn-secondary-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                  </svg>
-                  <span>Explore How It Works</span>
-                </a>
-              </div>
+                    <p class="home-hero-supporting">
+                      Understand. Plan. Take action. All with AI guidance.
+                    </p>
 
-              <!-- Metrics Pill Grid -->
-              <div class="hero-metrics-pill-grid">
-                
-                <div class="hero-metric-item">
-                  <div class="hero-metric-icon-wrap">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="9" cy="7" r="4"></circle>
-                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>
+                    <p class="home-hero-desc">
+                      Finora helps you navigate loans, insurance and fintech with clear information, personalised guidance and the confidence to take the next step.
+                    </p>
+
+                    <div class="home-hero-btn-group">
+                      <a href="ai-assistant.html" class="btn-home-primary">
+                        <span>Get Started</span>
+                        <span aria-hidden="true">→</span>
+                      </a>
+                      <a href="#howItWorksSection" class="btn-home-secondary" id="watchVideoBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                        </svg>
+                        <span>Watch Video</span>
+                      </a>
+                    </div>
                   </div>
-                  <div class="hero-metric-text">
-                    <span class="hero-metric-value">1M+</span>
-                    <span class="hero-metric-label">People Guided</span>
+
+                  <!-- Right Hero Visual with Journey Highway & Floating Milestones -->
+                  <div class="home-hero-visual-wrapper">
+                    <div class="home-hero-visual-container">
+                      <img src="assets/images/home-hero-visual.jpg" alt="Scenic winding road representing the guided financial journey through life milestones" class="home-hero-img">
+                      
+                      <!-- Overlay Quotes -->
+                      <div class="home-float-quote-top" aria-hidden="true">Same goals. A brighter tomorrow.</div>
+
+                      <!-- Floating Milestones -->
+                      <div class="home-float-badge home-float-badge-learn" aria-hidden="true">
+                        <span>📖</span>
+                        <span>Learn</span>
+                      </div>
+
+                      <div class="home-float-badge home-float-badge-plan" aria-hidden="true">
+                        <span>📊</span>
+                        <span>Plan</span>
+                      </div>
+
+                      <div class="home-float-badge home-float-badge-grow" aria-hidden="true">
+                        <span>🌱</span>
+                        <span>Grow</span>
+                      </div>
+
+                      <div class="home-float-badge home-float-badge-achieve" aria-hidden="true">
+                        <span>🎯</span>
+                        <span>Achieve</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 2 — EXPLORE OUR SOLUTIONS (3 CARDS)
+                   ========================================================== -->
+              <section class="home-section" id="solutionsSection" aria-labelledby="solutionsHeading">
+                <div class="home-section-header-flex">
+                  <div class="home-section-title-wrap">
+                    <h2 id="solutionsHeading" class="home-section-title">Explore Our Solutions</h2>
+                    <p class="home-section-subhead">Different needs. One platform. Choose your journey and get started.</p>
+                  </div>
+                  <a href="#journeySection" class="home-view-all-link">
+                    <span>View all</span>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+
+                <div class="home-solutions-grid">
+                  
+                  <!-- Card 1: Loans -->
+                  <article class="home-solution-card home-card-loans" data-solution="loans" tabindex="0" role="button" aria-label="Explore Loans">
+                    <div class="home-solution-icon-wrap home-icon-loans" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="21" x2="21" y2="21"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                        <polyline points="5 6 12 3 19 6"></polyline>
+                        <line x1="6" y1="10" x2="6" y2="21"></line>
+                        <line x1="10" y1="10" x2="10" y2="21"></line>
+                        <line x1="14" y1="10" x2="14" y2="21"></line>
+                        <line x1="18" y1="10" x2="18" y2="21"></line>
+                      </svg>
+                    </div>
+                    <h3 class="home-solution-title">Loans</h3>
+                    <p class="home-solution-desc">Understand, compare and navigate your loan journey with ease.</p>
+                    <a href="loans.html" class="home-solution-action">
+                      <span>Explore Loans</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </article>
+
+                  <!-- Card 2: Insurance -->
+                  <article class="home-solution-card home-card-insurance" data-solution="insurance" tabindex="0" role="button" aria-label="Explore Insurance">
+                    <div class="home-solution-icon-wrap home-icon-insurance" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      </svg>
+                    </div>
+                    <h3 class="home-solution-title">Insurance</h3>
+                    <p class="home-solution-desc">Learn about coverage, policy terms and the insurance journey in simple language.</p>
+                    <a href="insurance.html" class="home-solution-action">
+                      <span>Explore Insurance</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </article>
+
+                  <!-- Card 3: Fintech -->
+                  <article class="home-solution-card home-card-fintech" data-solution="fintech" tabindex="0" role="button" aria-label="Explore Fintech">
+                    <div class="home-solution-icon-wrap home-icon-fintech" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                        <line x1="2" y1="10" x2="22" y2="10"></line>
+                      </svg>
+                    </div>
+                    <h3 class="home-solution-title">Fintech</h3>
+                    <p class="home-solution-desc">Explore digital financial services, payments and modern financial tools.</p>
+                    <a href="fintech.html" class="home-solution-action">
+                      <span>Explore Fintech</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </article>
+
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 3 — YOUR FINANCIAL JOURNEY (5-STEP CONNECTED TIMELINE)
+                   ========================================================== -->
+              <section class="home-section" id="journeySection" aria-labelledby="journeyHeading">
+                <div class="home-section-header-flex">
+                  <div class="home-section-title-wrap">
+                    <h2 id="journeyHeading" class="home-section-title">Your Financial Journey</h2>
+                    <p class="home-section-subhead">A simple, guided process from understanding to achievement.</p>
                   </div>
                 </div>
 
-                <div class="hero-metric-item">
-                  <div class="hero-metric-icon-wrap">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
+                <div class="home-journey-timeline" role="tablist" aria-label="Financial Journey Timeline">
+                  
+                  <!-- Step 01: Understand -->
+                  <button type="button" class="home-journey-step active-step" data-step-index="0" role="tab" aria-selected="true" aria-label="Step 1 Understand">
+                    <div class="home-step-icon-wrap">
+                      <span class="home-step-icon">📖</span>
+                    </div>
+                    <span class="home-step-title">Understand</span>
+                    <span class="home-step-desc">Learn the basics and explore your options.</span>
+                  </button>
+
+                  <!-- Step 02: Plan -->
+                  <button type="button" class="home-journey-step" data-step-index="1" role="tab" aria-selected="false" aria-label="Step 2 Plan">
+                    <div class="home-step-icon-wrap">
+                      <span class="home-step-icon">📄</span>
+                    </div>
+                    <span class="home-step-title">Plan</span>
+                    <span class="home-step-desc">Get personalised guidance and prepare.</span>
+                  </button>
+
+                  <!-- Step 03: Take Action -->
+                  <button type="button" class="home-journey-step" data-step-index="2" role="tab" aria-selected="false" aria-label="Step 3 Take Action">
+                    <div class="home-step-icon-wrap">
+                      <span class="home-step-icon">✈️</span>
+                    </div>
+                    <span class="home-step-title">Take Action</span>
+                    <span class="home-step-desc">Navigate the process with clarity.</span>
+                  </button>
+
+                  <!-- Step 04: Track -->
+                  <button type="button" class="home-journey-step" data-step-index="3" role="tab" aria-selected="false" aria-label="Step 4 Track">
+                    <div class="home-step-icon-wrap">
+                      <span class="home-step-icon">📊</span>
+                    </div>
+                    <span class="home-step-title">Track</span>
+                    <span class="home-step-desc">Monitor your progress and next steps.</span>
+                  </button>
+
+                  <!-- Step 05: Achieve -->
+                  <button type="button" class="home-journey-step" data-step-index="4" role="tab" aria-selected="false" aria-label="Step 5 Achieve">
+                    <div class="home-step-icon-wrap">
+                      <span class="home-step-icon">⭐</span>
+                    </div>
+                    <span class="home-step-title">Achieve</span>
+                    <span class="home-step-desc">Build a brighter financial future.</span>
+                  </button>
+
+                </div>
+
+                <!-- Interactive Step Detail Card -->
+                <div class="home-step-detail-card" id="homeStepDetailCard">
+                  <div class="home-detail-left">
+                    <div class="home-detail-icon-pill" id="homeDetailStepNum">01</div>
+                    <div class="home-detail-content">
+                      <h4 class="home-detail-title" id="homeDetailTitle">01 — Understand the Basics & Clarify Your Goals</h4>
+                      <p class="home-detail-text" id="homeDetailText">Start with zero confusion. Finora demystifies complicated jargon across lending, insurance coverage, and digital fintech so you know exactly what options fit your situation before making any commitment.</p>
+                      <div class="home-detail-tip-row" id="homeDetailTip">
+                        <span class="home-tip-icon">💡</span>
+                        <span class="home-tip-text">AI Guidance: Understanding your credit health and coverage requirements upfront saves time and prevents costly surprises.</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="hero-metric-text">
-                    <span class="hero-metric-value">70%</span>
-                    <span class="hero-metric-label">Faster Clarity</span>
+                  <button type="button" class="btn-home-action" id="homeDetailActionBtn">Explore Solutions</button>
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 4 — TOOLS TO HELP YOU (4 CARDS)
+                   ========================================================== -->
+              <section class="home-section" id="toolsSection" aria-labelledby="toolsHeading">
+                <div class="home-section-header-flex">
+                  <div class="home-section-title-wrap">
+                    <h2 id="toolsHeading" class="home-section-title">Tools to Help You</h2>
+                    <p class="home-section-subhead">Simple tools for smarter decisions.</p>
                   </div>
                 </div>
 
-                <div class="hero-metric-item">
-                  <div class="hero-metric-icon-wrap">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                  </div>
-                  <div class="hero-metric-text">
-                    <span class="hero-metric-value">Informed</span>
-                    <span class="hero-metric-label">Decisions</span>
-                  </div>
-                </div>
+                <div class="home-tools-grid">
+                  
+                  <!-- Tool 1: EMI Calculator -->
+                  <article class="home-tool-card" id="homeToolEmi" tabindex="0" role="button" aria-label="Open EMI Calculator">
+                    <div class="home-tool-icon-wrap" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                        <line x1="8" y1="6" x2="16" y2="6"></line>
+                        <line x1="16" y1="14" x2="16" y2="14.01"></line>
+                        <line x1="12" y1="14" x2="12" y2="14.01"></line>
+                        <line x1="8" y1="14" x2="8" y2="14.01"></line>
+                        <line x1="16" y1="18" x2="16" y2="18.01"></line>
+                        <line x1="12" y1="18" x2="12" y2="18.01"></line>
+                        <line x1="8" y1="18" x2="8" y2="18.01"></line>
+                      </svg>
+                    </div>
+                    <div class="home-tool-body">
+                      <h3 class="home-tool-title">EMI Calculator</h3>
+                      <p class="home-tool-desc">Estimate your monthly repayments.</p>
+                    </div>
+                  </article>
 
-                <div class="hero-metric-item">
-                  <div class="hero-metric-icon-wrap">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <!-- Tool 2: Eligibility Guide -->
+                  <article class="home-tool-card" id="homeToolEligibility" tabindex="0" role="button" aria-label="Open Eligibility Guide">
+                    <div class="home-tool-icon-wrap" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                      </svg>
+                    </div>
+                    <div class="home-tool-body">
+                      <h3 class="home-tool-title">Eligibility Guide</h3>
+                      <p class="home-tool-desc">Understand key eligibility factors.</p>
+                    </div>
+                  </article>
+
+                  <!-- Tool 3: Document Checklist -->
+                  <article class="home-tool-card" id="homeToolDocs" tabindex="0" role="button" aria-label="Open Document Checklist">
+                    <div class="home-tool-icon-wrap" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                      </svg>
+                    </div>
+                    <div class="home-tool-body">
+                      <h3 class="home-tool-title">Document Checklist</h3>
+                      <p class="home-tool-desc">Know what documents may be required.</p>
+                    </div>
+                  </article>
+
+                  <!-- Tool 4: Knowledge Hub -->
+                  <article class="home-tool-card" id="homeToolKnowledge" tabindex="0" role="button" aria-label="Explore Knowledge Hub">
+                    <div class="home-tool-icon-wrap" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                      </svg>
+                    </div>
+                    <div class="home-tool-body">
+                      <h3 class="home-tool-title">Knowledge Hub</h3>
+                      <p class="home-tool-desc">Learn with easy-to-understand resources.</p>
+                    </div>
+                  </article>
+
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 5 — RESPONSIBLE AI / TRANSPARENCY
+                   ========================================================== -->
+              <section class="home-responsible-card" aria-labelledby="responsibleHeading">
+                <div class="home-responsible-header">
+                  <div class="home-responsible-icon-wrap" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                     </svg>
                   </div>
-                  <div class="hero-metric-text">
-                    <span class="hero-metric-value">Trusted</span>
-                    <span class="hero-metric-label">& Secure</span>
+                  <div>
+                    <h2 id="responsibleHeading" class="home-responsible-title">Financial guidance, with transparency.</h2>
+                    <p class="home-responsible-subtitle">How Finora assists your journey while keeping you in complete control.</p>
                   </div>
                 </div>
 
-              </div>
+                <div class="home-principles-grid">
+                  <div class="home-principle-item">
+                    <div class="home-principle-dot" aria-hidden="true"></div>
+                    <h3 class="home-principle-name">Simplifies Information</h3>
+                    <p class="home-principle-desc">Breaks down complex fine print and multi-step processes into plain, human language.</p>
+                  </div>
+
+                  <div class="home-principle-item">
+                    <div class="home-principle-dot" aria-hidden="true"></div>
+                    <h3 class="home-principle-name">Explains Terminology</h3>
+                    <p class="home-principle-desc">Demystifies critical jargon like APR, deductibles, waiting periods and KYC without confusing jargon.</p>
+                  </div>
+
+                  <div class="home-principle-item">
+                    <div class="home-principle-dot" aria-hidden="true"></div>
+                    <h3 class="home-principle-name">Educational Roadmaps</h3>
+                    <p class="home-principle-desc">Provides structured journey checklists so you feel prepared and confident before applying.</p>
+                  </div>
+
+                  <div class="home-principle-item">
+                    <div class="home-principle-dot" aria-hidden="true"></div>
+                    <h3 class="home-principle-name">User Decisions</h3>
+                    <p class="home-principle-desc">AI does not make approvals or replace decisions by regulated banks, lenders and insurance institutions.</p>
+                  </div>
+                </div>
+              </section>
+
+              <!-- ==========================================================
+                   SECTION 6 — FINAL CTA BANNER
+                   ========================================================== -->
+              <section class="home-cta-banner-card" aria-labelledby="ctaBannerHeading">
+                <div class="home-cta-banner-glow" aria-hidden="true"></div>
+                <div class="home-cta-banner-content">
+                  <span class="home-cta-banner-pill">Ready to get started?</span>
+                  <h2 id="ctaBannerHeading" class="home-cta-banner-title">Start with what you want to achieve.</h2>
+                  <p class="home-cta-banner-desc">
+                    Tell Finora what you're trying to accomplish, and we'll help you understand the journey ahead.
+                  </p>
+                  <div class="home-cta-banner-actions">
+                    <a href="ai-assistant.html" class="btn btn-primary btn-hero-glow">
+                      <span>Start Your Journey</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                    <a href="loans.html" class="btn btn-outline-white">
+                      <span>Explore Loans</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
+              </section>
 
             </div>
 
-            <!-- Hero Right Floating AI Companion Card -->
-            <div class="hero-right">
-              <div class="hero-ai-card" role="region" aria-label="Finora AI Quick Assistant">
-                
-                <div class="hero-ai-header">
-                  <div class="hero-ai-brand">
-                    <div class="ai-sparkle-badge" aria-hidden="true">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <!-- ==========================================================
+                 RIGHT STICKY SIDEBAR (FINORA AI + MOUNTAIN CARD + QUOTE)
+                 ========================================================== -->
+            <aside class="home-side-column" aria-label="Finora AI Companion and Motivation">
+              
+              <!-- CARD 1: FINORA AI ASSISTANT WIDGET -->
+              <div class="home-ai-card" role="region" aria-label="Finora AI Companion">
+                <div class="home-ai-card-header">
+                  <div class="home-ai-header-brand">
+                    <div class="home-ai-sparkle-wrap" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                       </svg>
                     </div>
-                    <span class="hero-ai-title">Finora AI</span>
+                    <div class="home-ai-title-wrap">
+                      <span class="home-ai-title">Finora AI</span>
+                      <span class="home-ai-subtitle">Your financial journey companion</span>
+                    </div>
                   </div>
-                  <div class="hero-ai-status">
-                    <span class="status-dot-pulse" aria-hidden="true"></span>
+                  <div class="home-ai-status-pill">
+                    <span class="home-ai-status-dot" aria-hidden="true"></span>
                     <span>Online</span>
                   </div>
                 </div>
 
-                <div class="hero-ai-dialogue">
-                  <p class="ai-message-text" id="heroAiDialogueText">
-                    Hi! I'm Finora AI 👋 Tell me what you're trying to accomplish, and I'll guide you through the right financial journey.
-                  </p>
-                  <span class="ai-message-subtitle">Interactive journey companion</span>
-                </div>
-
-                <div class="hero-ai-chips-group">
-                  <span class="chips-label">Quick actions:</span>
-                  <div class="chips-container">
-                    <button type="button" class="ai-chip hero-ai-chip" data-intent="loan">🏦 I need a loan</button>
-                    <button type="button" class="ai-chip hero-ai-chip" data-intent="insurance">🛡️ I want insurance</button>
-                    <button type="button" class="ai-chip hero-ai-chip" data-intent="question">💬 I have a financial question</button>
-                    <button type="button" class="ai-chip hero-ai-chip" data-intent="document">📄 Help me understand a document</button>
+                <!-- Chat Dialogue Stream -->
+                <div class="home-ai-chat-body" id="homeAiChatBody">
+                  <div class="ai-bubble-msg">
+                    <div class="ai-bubble-avatar">🤖</div>
+                    <div class="ai-bubble-content">
+                      Hi! I'm Finora AI 👋<br><br>
+                      I can help you understand loans, insurance and fintech, explain financial concepts and guide you through your journey.<br><br>
+                      What would you like to know?
+                    </div>
                   </div>
                 </div>
 
-                <form class="hero-ai-input-form" id="heroAiForm">
-                  <input type="text" id="heroAiInput" class="hero-ai-input" placeholder="Type what you're trying to do..." aria-label="Ask Finora AI">
-                  <button type="submit" class="btn-send-mini" aria-label="Send query">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <!-- Quick Action Buttons -->
+                <div class="home-ai-chips-area">
+                  <span class="home-ai-chips-label">Quick actions:</span>
+                  <div class="home-ai-chips-group">
+                    <button type="button" class="home-ai-chip-btn" data-intent="What loan suits my needs?">
+                      <span>What loan suits my needs?</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                    <button type="button" class="home-ai-chip-btn" data-intent="Explain insurance coverage">
+                      <span>Explain insurance coverage</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                    <button type="button" class="home-ai-chip-btn" data-intent="How does EMI work?">
+                      <span>How does EMI work?</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                    <button type="button" class="home-ai-chip-btn" data-intent="What documents are required?">
+                      <span>What documents are required?</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
+                    <button type="button" class="home-ai-chip-btn" data-intent="I have a specific question">
+                      <span>I have a specific question</span>
+                      <span aria-hidden="true">💬</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Chat Input Form -->
+                <form class="home-ai-input-form" id="homeAiForm">
+                  <input type="text" id="homeAiInput" class="home-ai-text-input" placeholder="Ask Finora AI..." aria-label="Type message for Finora AI">
+                  <button type="submit" class="btn-ai-send" aria-label="Send message">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <line x1="22" y1="2" x2="11" y2="13"></line>
                       <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                     </svg>
                   </button>
                 </form>
 
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- ================================================================
-             SECTION 2 — "START WITH YOUR GOAL" (3 PRODUCT CARDS)
-             ================================================================ -->
-        <section class="goals-section" id="goals" aria-labelledby="goalsHeading">
-          <div class="section-header">
-            <div class="eyebrow-pill pill-light">
-              <span>GOAL-BASED DISCOVERY</span>
-            </div>
-            <h2 id="goalsHeading" class="section-title">Start with your goal.</h2>
-            <p class="section-subtitle">
-              You don't need to know the financial product first. Just tell us what you're trying to accomplish.
-            </p>
-          </div>
-
-          <div class="goal-cards-grid">
-            
-            <!-- CARD 1: LOANS -->
-            <article class="goal-card goal-card-loans">
-              <div class="goal-card-top">
-                <div class="goal-card-icon-wrap icon-loans" aria-hidden="true">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="21" x2="21" y2="21"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                    <polyline points="5 6 12 3 19 6"></polyline>
-                    <line x1="6" y1="10" x2="6" y2="21"></line>
-                    <line x1="10" y1="10" x2="10" y2="21"></line>
-                    <line x1="14" y1="10" x2="14" y2="21"></line>
-                    <line x1="18" y1="10" x2="18" y2="21"></line>
-                  </svg>
-                </div>
-                <div class="goal-card-arrow-badge" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
+                <!-- Disclaimer -->
+                <div class="home-ai-disclaimer-text">
+                  Finora AI provides educational guidance. Decisions and approval policies depend on authorised financial institutions.
                 </div>
               </div>
 
-              <div class="goal-card-body">
-                <h3 class="goal-card-title">Loans</h3>
-                <p class="goal-card-description">
-                  Understand loan journeys, eligibility information, documentation and repayment concepts.
+              <!-- CARD 2: MOUNTAIN MOTIVATION CTA CARD -->
+              <div class="home-mountain-cta-card">
+                <img src="assets/images/mountain-cta-bg.jpg" alt="Alpine mountain peaks under starlit sky" class="home-mountain-bg-img">
+                <div class="home-mountain-overlay"></div>
+                <div class="home-mountain-content">
+                  <h3 class="home-mountain-title">Small steps today. Bigger tomorrow.</h3>
+                  <a href="ai-assistant.html" class="home-mountain-btn">
+                    <span>Start Your Journey</span>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- CARD 3: INSPIRATIONAL QUOTE CARD -->
+              <div class="home-quote-card">
+                <div class="home-quote-glow" aria-hidden="true"></div>
+                <p class="home-quote-text">
+                  “Financial clarity gives you the freedom to focus on what truly matters.”
                 </p>
-                <div class="goal-card-checklist">
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-blue" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Loan eligibility check</span>
-                  </div>
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-blue" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Application guidance</span>
-                  </div>
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-blue" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Document assistance</span>
-                  </div>
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-blue" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Repayment planning</span>
-                  </div>
-                </div>
+                <div class="home-quote-wave" aria-hidden="true"></div>
               </div>
 
-              <div class="goal-card-footer">
-                <a href="loans.html" class="goal-card-cta cta-loans">
-                  <span>Explore Loans</span>
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- CARD 2: INSURANCE -->
-            <article class="goal-card goal-card-insurance">
-              <div class="goal-card-top">
-                <div class="goal-card-icon-wrap icon-insurance" aria-hidden="true">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  </svg>
-                </div>
-                <div class="goal-card-arrow-badge" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </div>
-              </div>
-
-              <div class="goal-card-body">
-                <h3 class="goal-card-title">Insurance</h3>
-                <p class="goal-card-description">
-                  Understand coverage, policy terms, claims and the steps involved in an insurance journey.
-                </p>
-                <div class="goal-card-checklist">
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-green" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Policy recommendations</span>
-                  </div>
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-green" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Simplified explanations</span>
-                  </div>
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-green" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Coverage comparison</span>
-                  </div>
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-green" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Claim process guidance</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="goal-card-footer">
-                <a href="insurance.html" class="goal-card-cta cta-insurance">
-                  <span>Explore Insurance</span>
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- CARD 3: FINTECH -->
-            <article class="goal-card goal-card-fintech">
-              <div class="goal-card-top">
-                <div class="goal-card-icon-wrap icon-fintech" aria-hidden="true">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-                    <line x1="2" y1="10" x2="22" y2="10"></line>
-                  </svg>
-                </div>
-                <div class="goal-card-arrow-badge" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </div>
-              </div>
-
-              <div class="goal-card-body">
-                <h3 class="goal-card-title">Fintech</h3>
-                <p class="goal-card-description">
-                  Explore digital financial services, onboarding, KYC, payments and financial tools.
-                </p>
-                <div class="goal-card-checklist">
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-purple" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Account onboarding</span>
-                  </div>
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-purple" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>KYC support</span>
-                  </div>
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-purple" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Payment solutions</span>
-                  </div>
-                  <div class="checklist-item">
-                    <svg class="checklist-icon icon-check-purple" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Financial tools & insights</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="goal-card-footer">
-                <a href="fintech.html" class="goal-card-cta cta-fintech">
-                  <span>Explore Fintech</span>
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </article>
+            </aside>
 
           </div>
-        </section>
 
-        <!-- ================================================================
-             SECTION 3 — AI GUIDANCE (INTERACTIVE INTERFACE PREVIEW)
-             ================================================================ -->
-        <section class="ai-guidance-section" id="ai-assistant" aria-labelledby="aiSectionHeading">
-          <div class="section-header">
-            <div class="eyebrow-pill pill-light">
-              <span>INTELLIGENT COMPANION</span>
-            </div>
-            <h2 id="aiSectionHeading" class="section-title">Financial questions shouldn't feel complicated.</h2>
-            <p class="section-subtitle">
-              Finora AI helps users understand financial concepts, navigate processes and identify the next step in their journey.
-            </p>
-          </div>
-
-          <div class="ai-preview-container">
-            
-            <!-- Left Sub-Panel: AI Persona & Context -->
-            <div class="ai-preview-sidebar">
-              <div class="ai-preview-brand-block">
-                <div class="ai-avatar-large" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="ai-preview-brand-title">Finora AI</h3>
-                  <p class="ai-preview-brand-desc">Your financial journey companion</p>
-                </div>
-              </div>
-
-              <!-- Interactive Scenario Selectors -->
-              <div class="ai-scenarios-list">
-                <span class="scenario-label">Try interactive scenarios:</span>
-                
-                <button type="button" class="scenario-btn active" data-scenario="home-loan">
-                  <span>Home Loan Eligibility</span>
-                  <span class="scenario-arrow" aria-hidden="true">▶</span>
-                </button>
-                
-                <button type="button" class="scenario-btn" data-scenario="insurance-compare">
-                  <span>Term vs Health Insurance</span>
-                  <span class="scenario-arrow" aria-hidden="true">▶</span>
-                </button>
-                
-                <button type="button" class="scenario-btn" data-scenario="kyc-verification">
-                  <span>Digital KYC & Verification</span>
-                  <span class="scenario-arrow" aria-hidden="true">▶</span>
-                </button>
-              </div>
-
-              <a href="ai-assistant.html" class="btn btn-primary btn-pill">
-                <span>Open AI Assistant</span>
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-
-            <!-- Right Sub-Panel: Conversation Stream -->
-            <div class="ai-preview-chat-pane">
-              
-              <div class="chat-message-stream">
-                
-                <!-- Simulated User Query -->
-                <div class="chat-bubble chat-bubble-user">
-                  <div class="chat-avatar-mini avatar-user-mini" aria-hidden="true">You</div>
-                  <div class="chat-bubble-content">
-                    <p class="chat-text" id="previewUserText">
-                      What documents do I need for a home loan, and how is eligibility evaluated?
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Simulated AI Response -->
-                <div class="chat-bubble chat-bubble-ai">
-                  <div class="chat-avatar-mini avatar-ai-mini" aria-hidden="true">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                    </svg>
-                  </div>
-                  <div class="chat-bubble-content">
-                    <div class="chat-greeting" id="previewAiGreeting">
-                      Here is a simplified breakdown of the Home Loan journey:
-                    </div>
-                    <p class="chat-text" id="previewAiBody">
-                      Eligibility is typically assessed using your stable monthly income, credit profile (CIBIL/Equifax), and existing debt obligations (FOIR). Essential documents usually include: 1) Proof of Identity & Residence, 2) Last 3-6 months' salary slips or ITR for self-employed, 3) 6 months' bank statements, and 4) Property chain documents.
-                    </p>
-                    
-                    <!-- Quick Action Chips -->
-                    <div class="chat-chips-row">
-                      <button type="button" class="chat-action-chip">I need a loan</button>
-                      <button type="button" class="chat-action-chip">I want insurance</button>
-                      <button type="button" class="chat-action-chip">Explain a financial term</button>
-                      <button type="button" class="chat-action-chip">Help me understand a document</button>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Responsible AI Disclaimer -->
-              <div class="ai-disclaimer-box">
-                <svg class="disclaimer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-                <p class="disclaimer-text">
-                  AI guidance is informational and does not replace advice or decisions from regulated financial institutions.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-        <!-- ================================================================
-             SECTION 4 — HOW IT WORKS (5-STEP HORIZONTAL JOURNEY)
-             ================================================================ -->
-        <section class="how-it-works-section" id="how-it-works" aria-labelledby="howItWorksHeading">
-          <div class="section-header centered">
-            <div class="eyebrow-pill pill-light">
-              <span>SEAMLESS WORKFLOW</span>
-            </div>
-            <h2 id="howItWorksHeading" class="section-title">One journey. Less friction.</h2>
-            <p class="section-subtitle">
-              From confusion to clarity in five guided, human-centered steps.
-            </p>
-          </div>
-
-          <div class="journey-timeline-wrapper">
-            <div class="journey-track-line" aria-hidden="true"></div>
-
-            <div class="journey-steps-grid">
-              
-              <!-- STEP 01 -->
-              <div class="journey-step-card">
-                <div class="step-node-badge" aria-hidden="true">01</div>
-                <h3 class="step-title">Discover</h3>
-                <p class="step-description">Tell us what you need and what goal you want to achieve.</p>
-              </div>
-
-              <!-- STEP 02 -->
-              <div class="journey-step-card">
-                <div class="step-node-badge" aria-hidden="true">02</div>
-                <h3 class="step-title">Understand</h3>
-                <p class="step-description">Get simple, jargon-free explanations tailored to your context.</p>
-              </div>
-
-              <!-- STEP 03 -->
-              <div class="journey-step-card">
-                <div class="step-node-badge" aria-hidden="true">03</div>
-                <h3 class="step-title">Prepare</h3>
-                <p class="step-description">Know what information and documents may be needed in advance.</p>
-              </div>
-
-              <!-- STEP 04 -->
-              <div class="journey-step-card">
-                <div class="step-node-badge" aria-hidden="true">04</div>
-                <h3 class="step-title">Navigate</h3>
-                <p class="step-description">Move through the process with step-by-step guided assistance.</p>
-              </div>
-
-              <!-- STEP 05 -->
-              <div class="journey-step-card">
-                <div class="step-node-badge" aria-hidden="true">05</div>
-                <h3 class="step-title">Complete</h3>
-                <p class="step-description">Understand what's next and track your milestones with clarity.</p>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        <!-- ================================================================
-             SECTION 5 — WHY FINORA (4 VALUE CARDS)
-             ================================================================ -->
-        <section class="why-finora-section" id="why-finora" aria-labelledby="whyHeading">
-          <div class="section-header">
-            <div class="eyebrow-pill pill-light">
-              <span>HUMAN-CENTERED DESIGN</span>
-            </div>
-            <h2 id="whyHeading" class="section-title">Designed around people, not paperwork.</h2>
-            <p class="section-subtitle">
-              Every feature is built to simplify complex financial journeys without confusing jargon or hidden barriers.
-            </p>
-          </div>
-
-          <div class="features-grid">
-            
-            <!-- FEATURE 1 -->
-            <div class="feature-card">
-              <div class="feature-icon-box" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
-                </svg>
-              </div>
-              <h3 class="feature-title">AI-Powered Guidance</h3>
-              <p class="feature-text">Personalised guidance throughout the journey, answering questions whenever you need.</p>
-            </div>
-
-            <!-- FEATURE 2 -->
-            <div class="feature-card">
-              <div class="feature-icon-box" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                </svg>
-              </div>
-              <h3 class="feature-title">Simpler Information</h3>
-              <p class="feature-text">Turn complex financial language, acronyms, and clauses into understandable explanations.</p>
-            </div>
-
-            <!-- FEATURE 3 -->
-            <div class="feature-card">
-              <div class="feature-icon-box" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                </svg>
-              </div>
-              <h3 class="feature-title">Document Assistance</h3>
-              <p class="feature-text">Help users understand requirements, organize files, and avoid common submission errors.</p>
-            </div>
-
-            <!-- FEATURE 4 -->
-            <div class="feature-card">
-              <div class="feature-icon-box" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                </svg>
-              </div>
-              <h3 class="feature-title">Journey Tracking</h3>
-              <p class="feature-text">Show users where they are, what is completed, and what actions come next with total clarity.</p>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- ================================================================
-             SECTION 6 — TRUST & RESPONSIBLE AI
-             ================================================================ -->
-        <section class="trust-section" id="trust" aria-labelledby="trustHeading">
-          
-          <div class="trust-content">
-            <div class="eyebrow-pill pill-light">
-              <span>RESPONSIBLE & ETHICAL AI</span>
-            </div>
-            
-            <h2 id="trustHeading" class="section-title">AI that guides. You decide.</h2>
-            
-            <p class="section-subtitle">
-              Finora is engineered on principles of radical transparency, human agency, and strict data privacy.
-            </p>
-
-            <div class="trust-pillars-list">
-              
-              <div class="trust-pillar-item">
-                <div class="pillar-icon-wrap" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="pillar-title">Clear Explanations</h3>
-                  <p class="pillar-desc">Plain language information without misleading financial technicalities or hidden conditions.</p>
-                </div>
-              </div>
-
-              <div class="trust-pillar-item">
-                <div class="pillar-icon-wrap" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="pillar-title">User-Controlled Actions</h3>
-                  <p class="pillar-desc">You are always in the driver's seat. No actions are initiated without your explicit intent.</p>
-                </div>
-              </div>
-
-              <div class="trust-pillar-item">
-                <div class="pillar-icon-wrap" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="pillar-title">Transparent Information & No Guarantees</h3>
-                  <p class="pillar-desc">We never claim automatic approvals or guaranteed loans. Real decisions belong to regulated institutions.</p>
-                </div>
-              </div>
-
-              <div class="trust-pillar-item">
-                <div class="pillar-icon-wrap" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="pillar-title">Privacy-Conscious Design</h3>
-                  <p class="pillar-desc">Your financial discussions and journey inputs remain confidential and protected.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Illustrated Trust Visual Card -->
-          <div class="trust-visual-container">
-            <div class="trust-shield-card">
-              <div class="trust-shield-icon-outer" aria-hidden="true">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </div>
-              <span class="trust-badge-pill">Ethical Framework</span>
-              <h3 class="trust-card-title">Empowerment, Not Confusion</h3>
-              <p class="trust-card-desc">
-                Finora provides guidance, education, and step organization to help users navigate financial choices with confidence.
-              </p>
-            </div>
-          </div>
-
-        </section>
-
-        <!-- ================================================================
-             SECTION 7 — FINAL CTA BANNER
-             ================================================================ -->
-        <section class="final-cta-section" aria-labelledby="finalCtaHeading">
-          <div class="cta-banner-glow" aria-hidden="true"></div>
-          
-          <div class="final-cta-inner">
-            <div class="eyebrow-pill pill-dark">
-              <span>READY TO BEGIN?</span>
-            </div>
-            
-            <h2 id="finalCtaHeading" class="final-cta-heading">
-              Your financial journey starts with one question.
-            </h2>
-            
-            <p class="final-cta-text">
-              Tell Finora what you're trying to accomplish and discover a simpler way forward.
-            </p>
-            
-            <div class="final-cta-actions">
-              <a href="ai-assistant.html" class="btn btn-hero-glow">
-                <span>Start My Journey</span>
-                <span aria-hidden="true">→</span>
-              </a>
-              <a href="ai-assistant.html" class="btn btn-secondary-glass">
-                <span>Explore AI Assistant</span>
-              </a>
-            </div>
-          </div>
-        </section>
+        </div>
 
       </main>
+
     </div>
 
     <!-- ====================================================================
-         SECTION 8 — SITE FOOTER
+         GLOBAL FOOTER (MATCHING DESIGN SYSTEM)
          ==================================================================== -->
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer" id="about" role="contentinfo">
       <div class="footer-inner">
         
         <div class="footer-top-grid">
           
-          <!-- Column 1: Brand & Mission -->
+          <!-- Column 1: Brand -->
           <div class="footer-brand-column">
             <span class="footer-brand-title">Finora</span>
             <span class="footer-brand-tagline">Simpler Journeys. Brighter Futures.</span>
@@ -1041,7 +831,7 @@
         <!-- Bottom Copyright & Prototype Disclaimer -->
         <div class="footer-bottom">
           <p class="footer-copyright">
-            © 2026 Finora — A simpler, more inclusive financial future.
+            © 2026 Finora — Hackathon Prototype
           </p>
           
           <div class="footer-prototype-tag">
@@ -1075,7 +865,7 @@
     </footer>
 
     <!-- ====================================================================
-         MOBILE BOTTOM NAVIGATION DOCK (Native App UX for Mobile)
+         MOBILE BOTTOM NAVIGATION DOCK
          ==================================================================== -->
     <nav class="mobile-bottom-nav" aria-label="Mobile Quick Navigation">
       <a href="index.html" class="mobile-bottom-nav-item active" aria-current="page">
@@ -1124,6 +914,168 @@
       </a>
     </nav>
 
+  </div>
+
+  <!-- ====================================================================
+       INTERACTIVE MODALS
+       ==================================================================== -->
+
+  <!-- MODAL 1: INTERACTIVE EMI CALCULATOR -->
+  <div class="home-modal-overlay" id="modalEmiCalculator" role="dialog" aria-modal="true" aria-labelledby="emiModalTitle">
+    <div class="home-modal-card">
+      <div class="home-modal-header">
+        <div class="home-modal-title-group">
+          <div class="home-modal-icon-pill" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+              <line x1="8" y1="6" x2="16" y2="6"></line>
+              <line x1="16" y1="14" x2="16" y2="14.01"></line>
+              <line x1="12" y1="14" x2="12" y2="14.01"></line>
+              <line x1="8" y1="14" x2="8" y2="14.01"></line>
+            </svg>
+          </div>
+          <h3 class="home-modal-title" id="emiModalTitle">Interactive EMI Calculator</h3>
+        </div>
+        <button type="button" class="home-modal-close-btn" id="closeEmiModal" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="home-modal-body">
+        
+        <!-- Input 1: Loan Amount -->
+        <div class="calc-input-group">
+          <div class="calc-label-row">
+            <span>Loan Amount</span>
+            <span class="calc-value-badge" id="emiAmountVal">₹5,00,000 (5 Lakhs)</span>
+          </div>
+          <input type="range" id="emiAmountSlider" class="calc-range-slider" min="50000" max="10000000" step="25000" value="500000" aria-label="Loan Amount Slider">
+        </div>
+
+        <!-- Input 2: Interest Rate -->
+        <div class="calc-input-group">
+          <div class="calc-label-row">
+            <span>Interest Rate (Annual)</span>
+            <span class="calc-value-badge" id="emiRateVal">8.5%</span>
+          </div>
+          <input type="range" id="emiRateSlider" class="calc-range-slider" min="3" max="24" step="0.1" value="8.5" aria-label="Interest Rate Slider">
+        </div>
+
+        <!-- Input 3: Tenure -->
+        <div class="calc-input-group">
+          <div class="calc-label-row">
+            <span>Loan Tenure (Years)</span>
+            <span class="calc-value-badge" id="emiTenureVal">5 Years</span>
+          </div>
+          <input type="range" id="emiTenureSlider" class="calc-range-slider" min="1" max="30" step="1" value="5" aria-label="Loan Tenure Slider">
+        </div>
+
+        <!-- Results Display Card -->
+        <div class="calc-results-card">
+          <div class="calc-emi-primary-display">
+            <span class="calc-emi-label">Estimated Monthly EMI</span>
+            <span class="calc-emi-amount" id="calcResultEmi">₹10,258/mo</span>
+          </div>
+
+          <div class="calc-breakdown-row">
+            <div class="calc-breakdown-item">
+              <span class="calc-breakdown-label">Principal Amount</span>
+              <span class="calc-breakdown-value" id="calcResultPrincipal">₹5,00,000</span>
+            </div>
+            <div class="calc-breakdown-item">
+              <span class="calc-breakdown-label">Total Interest</span>
+              <span class="calc-breakdown-value" id="calcResultInterest">₹1,15,497</span>
+            </div>
+          </div>
+
+          <div class="calc-breakdown-row">
+            <div class="calc-breakdown-item">
+              <span class="calc-breakdown-label">Total Payment (Principal + Interest)</span>
+              <span class="calc-breakdown-value" id="calcResultTotal">₹6,15,497</span>
+            </div>
+          </div>
+
+          <p class="calc-disclaimer-note">
+            Illustrative calculation for educational awareness. Actual interest rates, processing fees and terms vary by lending institution.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: ELIGIBILITY GUIDE -->
+  <div class="home-modal-overlay" id="modalEligibilityGuide" role="dialog" aria-modal="true" aria-labelledby="eligibilityModalTitle">
+    <div class="home-modal-card">
+      <div class="home-modal-header">
+        <div class="home-modal-title-group">
+          <div class="home-modal-icon-pill" aria-hidden="true">📊</div>
+          <div>
+            <h3 class="home-modal-title" id="eligibilityModalTitle">Eligibility Assessment Guide</h3>
+            <p class="home-modal-subhead">Key factors considered by financial institutions</p>
+          </div>
+        </div>
+        <button type="button" class="home-modal-close-btn" id="closeEligibilityModal" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="home-modal-body">
+        <div class="home-modal-box">
+          <h4 class="home-modal-sec-title">1. Credit Score (CIBIL / Experian)</h4>
+          <p class="home-modal-sec-desc">Scores range from 300 to 900. A score of 750+ demonstrates disciplined repayment behavior and unlocks competitive interest rates.</p>
+        </div>
+
+        <div class="home-modal-box">
+          <h4 class="home-modal-sec-title">2. Fixed Obligation to Income Ratio (FOIR)</h4>
+          <p class="home-modal-sec-desc">Lenders prefer your total monthly debt payments (existing loans + proposed EMI) to stay under 40–50% of net monthly income.</p>
+        </div>
+
+        <div class="home-modal-box">
+          <h4 class="home-modal-sec-title">3. Employment & Income Stability</h4>
+          <p class="home-modal-sec-desc">Continuous work experience of 1-2 years for salaried professionals; 2-3 years filed ITRs with positive cash flows for self-employed individuals.</p>
+        </div>
+
+        <button type="button" class="btn-cta-full" id="eligibilityAskAiBtn">
+          <span>Ask Finora AI about your eligibility</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: DOCUMENT CHECKLIST -->
+  <div class="home-modal-overlay" id="modalDocChecklist" role="dialog" aria-modal="true" aria-labelledby="docChecklistModalTitle">
+    <div class="home-modal-card">
+      <div class="home-modal-header">
+        <div class="home-modal-title-group">
+          <div class="home-modal-icon-pill" aria-hidden="true">📋</div>
+          <div>
+            <h3 class="home-modal-title" id="docChecklistModalTitle">Document Checklist</h3>
+            <p class="home-modal-subhead">Standard verification documentation</p>
+          </div>
+        </div>
+        <button type="button" class="home-modal-close-btn" id="closeDocChecklistModal" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="home-modal-body">
+        <div class="home-modal-box">
+          <h4 class="home-modal-sec-title">Identity & KYC Verification</h4>
+          <p class="home-modal-sec-desc">✓ PAN Card (Mandatory), Aadhaar Card, Passport, Voter ID</p>
+        </div>
+
+        <div class="home-modal-box">
+          <h4 class="home-modal-sec-title">Address Proof</h4>
+          <p class="home-modal-sec-desc">✓ Electricity Bill, Rental Agreement, Bank Passbook statement</p>
+        </div>
+
+        <div class="home-modal-box">
+          <h4 class="home-modal-sec-title">Income & Financial Proof</h4>
+          <p class="home-modal-sec-desc">✓ Last 3 months Salary Slips, Form 16, 6 months bank statements, or 2-3 years ITR</p>
+        </div>
+
+        <button type="button" class="btn-cta-full" id="docChecklistAskAiBtn">
+          <span>Ask Finora AI about document requirements</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- Scripts -->
